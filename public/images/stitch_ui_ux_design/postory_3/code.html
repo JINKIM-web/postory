@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#8c716b", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210a", "on-tertiary-fixed-variant": "#005323", "on-surface-variant": "#59413c", "status-observation-text": "#1D4ED8", "on-primary-fixed-variant": "#8a1b07", "surface-white": "#FFFFFF", "on-secondary-fixed": "#1c1b1b", "canvas-bg-alt": "#F7F7F3", "status-success-text": "#15803D", "tertiary-fixed": "#95f8a7", "tertiary-fixed-dim": "#79db8d", "accent-hover": "#E05338", "status-success-bg": "#F0FDF4", "on-primary-container": "#5c0900", "primary-fixed-dim": "#ffb4a5", "status-observation-bg": "#EFF6FF", "status-warning-text": "#B45309", "on-tertiary-container": "#003313", "status-critical-text": "#DC2626", "error": "#ba1a1a", "on-error": "#ffffff", "inverse-on-surface": "#f2f0f0", "on-secondary": "#ffffff", "secondary": "#5f5e5e", "background": "#fbf9f9", "on-primary-fixed": "#3e0400", "border-subtle": "#EAEAE5", "surface-bright": "#fbf9f9", "inverse-primary": "#ffb4a5", "border-strong": "#E5E5E0", "surface-container-highest": "#e3e2e2", "primary-container": "#f2664b", "on-tertiary": "#ffffff", "primary": "#ac341e", "surface-variant": "#e3e2e2", "inverse-surface": "#303031", "surface": "#fbf9f9", "ink-muted": "#737373", "surface-container": "#efeded", "surface-dim": "#dbdad9", "status-warning-bg": "#FFFBEB", "primary-fixed": "#ffdad3", "canvas-bg": "#FAFAF7", "secondary-fixed": "#e5e2e1", "tertiary-container": "#43a55d", "surface-container-high": "#e9e8e7", "on-secondary-container": "#636262", "on-error-container": "#93000a", "on-surface": "#1b1c1c", "on-secondary-fixed-variant": "#474746", "surface-tint": "#ac341e", "outline-variant": "#e0bfb9", "tertiary": "#006d30", "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3", "accent-subtle": "#FFF1EE", "secondary-container": "#e2dfde", "status-critical-bg": "#FEF2F2", "on-background": "#1b1c1c", "ink-secondary": "#262626", "secondary-fixed-dim": "#c8c6c5", "ink-primary": "#171717" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-lg": "2rem", "space-md": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin": "2rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "gutter-sm": "1rem" }, "fontFamily": { "body-ui": [ "Plus Jakarta Sans" ], "code-inline": [ "JetBrains Mono" ], "display-mobile": [ "Plus Jakarta Sans" ], "caption": [ "Plus Jakarta Sans" ], "page-title-mobile": [ "Plus Jakarta Sans" ], "body-editorial": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "body-ui-medium": [ "Plus Jakarta Sans" ], "page-title": [ "Plus Jakarta Sans" ], "section-title": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-ui": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "code-inline": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "display-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "caption": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "page-title-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-editorial": [ "16px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" } ], "body-ui-medium": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "500" } ], "page-title": [ "28px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "section-title": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display": [ "44px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-canvas-bg font-body-ui text-ink-primary antialiased selection:bg-accent-subtle selection:text-primary"><aside class="fixed left-0 top-0 h-screen w-[240px] bg-canvas-bg-alt z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-md pt-space-md pb-space-sm"><div class="flex items-center gap-space-sm"><img alt="POSTORY Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbLEsOe1rVarHjAwdf53shx-rblI-jG_OtRdYpQEq61lQGz2-jwCpBWsJiDN-uK-hNt3x-JvKLAW2SJmLHuT-W40e76xBkNhfghgyWP0CsS4P3zlxjrx6BVgPZfUCkLXNf3qWBrLfkZDD9zKMynLxxZVnxvPDa2Uy7SIVOGpCF1x6L2ozGTTfRbvEYo4x3HiAhuoVzZLXKO36HYy_U8hvY2Zbo9F_vxxciBIWJPAMici7tBB2rFcSx"/><div class="flex flex-col"><span class="font-page-title text-page-title-mobile tracking-tight text-ink-primary leading-none">POSTORY</span></div></div><p class="mt-space-xs font-caption text-caption text-ink-muted pl-[2px]">One Story. Every Channel.</p></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-md" data-active-classes="bg-accent-subtle text-primary font-body-ui-medium font-medium"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-ink-secondary hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="home" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">cottage</span><span class="font-label-md text-label-md">홈 (Home)</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg transition-all duration-150 bg-accent-subtle text-primary font-body-ui-medium font-medium" data-path="create" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">edit_square</span><span class="font-label-md text-label-md">새 스토리 작성</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-ink-secondary hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="library" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">folder_open</span><span class="font-label-md text-label-md">콘텐츠 라이브러리</span></a></nav><div class="my-space-md mx-space-md h-px bg-border-subtle"></div><div class="px-space-sm"><div class="px-space-sm mb-space-xs"><span class="font-caption text-caption font-semibold tracking-wide text-ink-muted uppercase">스마트 확장</span></div><div class="flex flex-col gap-space-xs"><div class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-ink-muted cursor-not-allowed opacity-80"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">record_voice_over</span><span class="font-label-md text-label-md">내 보이스 학습</span></div><span class="font-caption text-caption px-space-xs py-[1px] rounded bg-surface-container-high text-secondary">Soon</span></div><div class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-ink-muted cursor-not-allowed opacity-80"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="font-label-md text-label-md">발행 캘린더</span></div><span class="font-caption text-caption px-space-xs py-[1px] rounded bg-surface-container-high text-secondary">Soon</span></div><div class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-ink-muted cursor-not-allowed opacity-80"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">insights</span><span class="font-label-md text-label-md">성과 인사이트</span></div><span class="font-caption text-caption px-space-xs py-[1px] rounded bg-surface-container-high text-secondary">Soon</span></div></div></div></div><div class="flex flex-col p-space-sm gap-space-sm"><div class="p-space-sm rounded-lg bg-surface-white shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex justify-between items-center mb-space-xs"><span class="font-caption text-caption text-ink-secondary font-medium">이번 달 생성량</span><span class="font-caption text-caption font-semibold text-primary">8 / 20</span></div><div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 40%"></div></div><p class="mt-space-xs font-caption text-[11px] leading-tight text-ink-muted">이번 달 8/20개 스토리 생성</p></div><nav class="flex flex-col" data-active-classes="bg-accent-subtle text-primary font-medium"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-ink-secondary hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">settings</span><span class="font-label-md text-label-md">설정 (Settings)</span></a></nav><div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtpIpxY-urLiqc9E5d657niG4bGmdr7V6jmw8i_dbDwrT3mHMwbv3LRha-Ji0lu16NpK5bDdya7vFs94_qHZYzA0mkDtZuV3igBM9Mh77t2EfX3AHigHk6QYTAI3nDJfiqJg230BujNLqqo43cNi7xQseRXaMglBHn7cH270tKxa92puft_51xM_3cFKivvMz36WwhEaowwWixeQM-u3obYEduBQzYAUepqyMLJsQU6zm_xE1zYv9O"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-ink-primary font-medium truncate">이수진</span><span class="font-caption text-caption text-ink-muted truncate">Creator</span></div></div><button aria-label="계정 메뉴" class="text-ink-muted hover:text-on-surface p-space-xs rounded" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-14 bg-surface-white/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-xs text-ink-muted font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">folder</span><span class="hover:text-ink-primary cursor-pointer transition-colors">워크스페이스</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-ink-primary font-medium">에디토리얼 스튜디오</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-status-success-bg text-status-success-text font-caption text-caption"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span><span>자동 저장됨</span></div><div class="h-4 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs"><button aria-label="도움말" class="p-space-xs rounded-lg text-ink-muted hover:text-on-surface hover:bg-canvas-bg-alt transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><button aria-label="알림" class="p-space-xs rounded-lg text-ink-muted hover:text-on-surface hover:bg-canvas-bg-alt transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-primary"></span></button></div><a class="inline-flex items-center gap-space-xs px-space-md py-1.5 bg-primary-container hover:bg-accent-hover text-on-primary font-label-md text-label-md font-semibold rounded-lg shadow-sm transition-all duration-150 transform active:scale-[0.99]" data-path="create" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>새 콘텐츠 만들기</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0 ml-space-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtpIpxY-urLiqc9E5d657niG4bGmdr7V6jmw8i_dbDwrT3mHMwbv3LRha-Ji0lu16NpK5bDdya7vFs94_qHZYzA0mkDtZuV3igBM9Mh77t2EfX3AHigHk6QYTAI3nDJfiqJg230BujNLqqo43cNi7xQseRXaMglBHn7cH270tKxa92puft_51xM_3cFKivvMz36WwhEaowwWixeQM-u3obYEduBQzYAUepqyMLJsQU6zm_xE1zYv9O"/></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Workspace Toolbar -->
+<header class="w-full bg-surface-white px-space-lg py-space-sm shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm z-20">
+<div class="flex items-center gap-space-md flex-wrap">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded-lg bg-accent-subtle text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-section-title text-section-title text-ink-primary leading-tight font-semibold">성수동 골목 로스터리 카페 탐방기</h1>
+<button class="text-ink-muted hover:text-ink-primary transition-colors p-0.5 rounded" title="제목 수정" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs text-ink-muted font-caption text-caption">
+<span>최종 임시저장 14:32</span>
+<span>•</span>
+<span class="font-code-inline text-code-inline text-ink-secondary">v3.4-editorial</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-status-success-bg text-status-success-text font-caption text-caption">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-medium">Ready (게시 준비 완료)</span>
+</div>
+</div>
+<!-- Workspace Action Cluster -->
+<div class="flex items-center gap-space-xs self-end md:self-auto flex-wrap">
+<button class="flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-ink-secondary font-label-md text-label-md transition-colors" id="versionHistoryBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-ink-muted">history</span>
+<span>버전 히스토리</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-white text-[11px] font-mono text-ink-muted">v3</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-ink-secondary font-label-md text-label-md transition-colors" title="ZIP 다운로드" type="button">
+<span class="material-symbols-outlined text-[18px] text-ink-muted">download_for_offline</span>
+<span>에셋 패키지</span>
+</button>
+<div class="h-6 w-px bg-surface-container-high mx-1 hidden sm:block"></div>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container hover:bg-accent-hover text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all transform active:scale-[0.99]" id="copyBlogModalTrigger" type="button">
+<span class="material-symbols-outlined text-[19px]">content_copy</span>
+<span>네이버 블로그용 복사</span>
+</button>
+</div>
+</header>
+<!-- Main Multi-Channel Studio Work Area (3-Column Layout) -->
+<div class="w-full max-w-[1560px] mx-auto px-space-sm md:px-space-md py-space-md grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- LEFT PANEL: Platform Format Switcher (2.5 Cols) -->
+<aside class="lg:col-span-3 xl:col-span-2 flex flex-col gap-space-sm">
+<div class="bg-surface-white rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<div class="px-space-xs py-1 flex items-center justify-between">
+<span class="font-caption text-caption text-ink-muted uppercase tracking-wider font-semibold">채널별 포맷터</span>
+<span class="text-[11px] px-1.5 py-0.5 rounded bg-surface-container-high text-ink-secondary font-mono">4CH Active</span>
+</div>
+<!-- Format Option 1: Naver Blog (Active) -->
+<button class="w-full text-left p-space-sm rounded-lg bg-accent-subtle text-primary transition-all flex flex-col gap-1 shadow-sm" type="button">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]">article</span>
+</span>
+<span class="font-label-md text-label-md font-semibold">네이버 블로그</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant pl-7">
+<span>1,420자</span>
+<span>•</span>
+<span>사진 3장 마커</span>
+</div>
+</button>
+<!-- Format Option 2: Instagram Feed -->
+<button class="w-full text-left p-space-sm rounded-lg bg-surface-white hover:bg-surface-container-low text-ink-secondary transition-all flex flex-col gap-1" type="button">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded bg-surface-container-high text-ink-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]">photo_camera</span>
+</span>
+<span class="font-label-md text-label-md font-medium text-ink-primary">인스타그램 피드</span>
+</div>
+<span class="font-caption text-[11px] text-ink-muted">카드 4/5</span>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption text-ink-muted pl-7">
+<span>380자</span>
+<span>•</span>
+<span>해시태그 5개</span>
+</div>
+</button>
+<!-- Format Option 3: Facebook Post -->
+<button class="w-full text-left p-space-sm rounded-lg bg-surface-white hover:bg-surface-container-low text-ink-secondary transition-all flex flex-col gap-1" type="button">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded bg-surface-container-high text-ink-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]">share</span>
+</span>
+<span class="font-label-md text-label-md font-medium text-ink-primary">페이스북 스토리</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption text-ink-muted pl-7">
+<span>620자</span>
+<span>•</span>
+<span>링크 최적화</span>
+</div>
+</button>
+<!-- Format Option 4: Shorts Storyboard -->
+<button class="w-full text-left p-space-sm rounded-lg bg-surface-white hover:bg-surface-container-low text-ink-secondary transition-all flex flex-col gap-1" type="button">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded bg-surface-container-high text-ink-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[17px]">videocam</span>
+</span>
+<span class="font-label-md text-label-md font-medium text-ink-primary">쇼츠 스토리보드</span>
+</div>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-status-observation-bg text-status-observation-text font-mono">25초</span>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption text-ink-muted pl-7">
+<span>4씬 큐시트</span>
+<span>•</span>
+<span>BGM 추천</span>
+</div>
+</button>
+</div>
+<!-- Live Sync & Voice Consistency Card -->
+<div class="bg-surface-white rounded-xl p-space-sm shadow-sm flex flex-col gap-space-xs">
+<span class="font-caption text-caption text-ink-muted uppercase tracking-wider font-semibold">에디터 톤 &amp; 보이스</span>
+<div class="flex items-center justify-between py-1">
+<span class="font-label-md text-label-md text-ink-primary">이수진의 담담한 감성체</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<p class="font-caption text-caption text-ink-muted leading-relaxed">
+          과장된 표현 없이 현장 경험과 오감 묘사에 집중하는 톤 프로필이 적용 중입니다.
+        </p>
+<div class="mt-space-xs pt-space-xs border-t-0 bg-surface-container-low p-space-xs rounded-lg flex items-center justify-between">
+<span class="text-[12px] text-ink-secondary font-medium">채널 간 톤 정합도</span>
+<span class="text-[12px] font-semibold text-status-success-text">98% 일치</span>
+</div>
+</div>
+</aside>
+<!-- CENTER PANEL: Editorial Document Canvas (Optimal 780px column) -->
+<main class="lg:col-span-6 xl:col-span-7 flex flex-col items-center">
+<!-- Title Selector Floater -->
+<div class="w-full max-w-[780px] bg-surface-white rounded-xl p-space-md shadow-sm mb-space-sm relative">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5 text-primary font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+<span>AI 추천 블로그 제목 (SEO 점수: 96)</span>
+</div>
+<button class="flex items-center gap-1 text-ink-muted hover:text-ink-primary font-caption text-caption transition-colors" id="toggleAltTitlesBtn" type="button">
+<span>다른 후보 3개 보기</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<div class="p-space-sm rounded-lg bg-canvas-bg-alt flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+<span class="font-body-ui-medium text-body-ui-medium text-ink-primary font-semibold">성수동 골목길에서 만난 나만의 아지트, 조용한 쉼이 있는 로스터리</span>
+</div>
+<button class="shrink-0 text-ink-muted hover:text-primary transition-colors p-1" title="제목 재생성" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+<!-- Hidden Alternate Titles Accordion -->
+<div class="hidden mt-space-sm flex flex-col gap-space-xs pt-space-xs bg-surface-container-low p-space-sm rounded-lg" id="altTitlesDropdown">
+<div class="flex items-center justify-between p-2 rounded bg-surface-white hover:bg-accent-subtle cursor-pointer transition-colors group">
+<span class="font-label-md text-label-md text-ink-secondary group-hover:text-primary">2. 주말 성수동 숨은 원두 맛집, 복잡한 인파를 피해 찾은 붉은 벽돌 카페</span>
+<span class="text-xs text-ink-muted font-mono">클릭수 우수</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-white hover:bg-accent-subtle cursor-pointer transition-colors group">
+<span class="font-label-md text-label-md text-ink-secondary group-hover:text-primary">3. [내돈내산] 성수동 골목 안 잔잔한 서가와 다크 로스팅 플랫화이트</span>
+<span class="text-xs text-ink-muted font-mono">신뢰도 우수</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-white hover:bg-accent-subtle cursor-pointer transition-colors group">
+<span class="font-label-md text-label-md text-ink-secondary group-hover:text-primary">4. 차분한 원목 테이블과 커피 향이 머무는 곳, 성수 로스터리 방문 기록</span>
+<span class="text-xs text-ink-muted font-mono">감성 블로그형</span>
+</div>
+</div>
+</div>
+<!-- Main Editorial Paper Card -->
+<article class="w-full max-w-[780px] bg-surface-white rounded-xl shadow-sm p-space-md md:p-space-xl flex flex-col text-ink-primary relative">
+<!-- Post Header Metadata -->
+<div class="pb-space-md mb-space-md border-b-0 bg-canvas-bg-alt/60 p-space-md rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-ink-muted font-caption text-caption">
+<span>2026. 10. 03 · 작성자 이수진</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+              공개 예정: 전체 공개
+            </span>
+</div>
+<div class="flex gap-1.5 flex-wrap mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-white text-ink-muted font-caption text-[11px]">#성수동카페</span>
+<span class="px-2 py-0.5 rounded bg-surface-white text-ink-muted font-caption text-[11px]">#로스터리카페</span>
+<span class="px-2 py-0.5 rounded bg-surface-white text-ink-muted font-caption text-[11px]">#플랫화이트</span>
+<span class="px-2 py-0.5 rounded bg-surface-white text-ink-muted font-caption text-[11px]">#주말기록</span>
+</div>
+</div>
+<!-- Paragraph 1 -->
+<p class="font-body-editorial text-body-editorial text-ink-primary leading-loose mb-space-lg">
+          복잡한 성수동 메인 거리에서 두 블록 정도 벗어나면, 오래된 붉은 벽돌 건물 사이에 조용히 자리 잡은 작은 로스터리를 만날 수 있습니다. 화려한 네온사인이나 거대한 간판 대신, 세월의 흔적이 묻어나는 작은 황동 현판 하나만이 이곳이 커피를 볶는 공간임을 잔잔하게 일러주고 있었습니다. 주말의 번잡함을 잠시 잊고 차분한 온기를 느끼기에 충분한 입구였습니다.
+        </p>
+<!-- Inline Photo Marker Block 1 -->
+<div class="my-space-md p-space-md rounded-xl bg-canvas-bg-alt flex flex-col sm:flex-row items-center gap-space-md shadow-xs group">
+<div class="w-full sm:w-44 h-32 rounded-lg overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A warm red brick cafe exterior in Seongsu-dong, old weathered brass signage, soft morning sunlight casting quiet geometric shadows, muted natural color grading, high quality architectural photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ0d8etRbQPhm2fUPcgIVV5OrO0IgjZCJXaBtbVWiKpoGLSibd9wThVNNIa-ot1yN79Qf37Y1i9Gve9cPDe_ovayf6uc2X9y4rXxTUM4S7WFOySTplNaVNG9hVF7sJXEj3Yd_6VUoWTIaXpwKmZXpg_paaH5BhyYtj9Tg6A-fPyWal-db26rFeLfiCloQ_aHxmoms5pVAgySyICsH78o8I9xJCXBRtGiDGi_W3V8V1dtVQobAJNHcB"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface text-[10px] font-mono">
+              RAW 2.4MB
+            </div>
+</div>
+<div class="flex flex-col justify-between w-full h-full gap-2">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-status-observation-bg text-status-observation-text font-caption text-[12px] font-semibold">
+                  [사진 01] 카페 외관 및 간판
+                </span>
+<span class="font-code-inline text-[11px] text-ink-muted">IMG_8821.JPG</span>
+</div>
+<p class="font-label-md text-label-md text-ink-secondary">
+                네이버 블로그 본문 사진 삽입 위치 01 — 붉은 벽돌 질감과 황동 현판 중심 배치 권장
+              </p>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto text-ink-muted font-caption text-caption">
+<button class="hover:text-primary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">swap_vert</span> 순서 변경
+              </button>
+<span>•</span>
+<button class="hover:text-primary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span> 사진 교체
+              </button>
+<span>•</span>
+<button class="hover:text-error flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">delete</span> 삭제
+              </button>
+</div>
+</div>
+</div>
+<!-- Heading 2 -->
+<h2 class="font-section-title text-section-title text-ink-primary font-bold mt-space-md mb-space-sm flex items-center gap-2">
+<span class="w-1.5 h-5 rounded-full bg-primary-container inline-block"></span>
+          차분한 빛이 머무는 원목 인테리어와 서가
+        </h2>
+<!-- Paragraph 2 with contextual floating AI micro-toolbar -->
+<div class="relative group my-space-sm p-space-sm -mx-space-sm rounded-lg hover:bg-canvas-bg-alt/70 transition-colors">
+<!-- Floating AI toolbar for editing -->
+<div class="absolute -top-5 left-4 hidden group-hover:flex items-center gap-1 px-2 py-1 rounded-lg bg-inverse-surface text-inverse-on-surface shadow-md z-10 text-xs">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">auto_fix_high</span>
+<button class="hover:text-primary-fixed-dim px-1 transition-colors" type="button">더 자연스럽게</button>
+<span class="text-ink-muted">|</span>
+<button class="hover:text-primary-fixed-dim px-1 transition-colors" type="button">핵심 요약</button>
+<span class="text-ink-muted">|</span>
+<button class="hover:text-primary-fixed-dim px-1 transition-colors" type="button">문체 변경</button>
+<span class="text-ink-muted">|</span>
+<button class="hover:text-primary-fixed-dim px-1 transition-colors" title="이전 버전으로 복원" type="button">
+<span class="material-symbols-outlined text-[13px]">undo</span>
+</button>
+</div>
+<p class="font-body-editorial text-body-editorial text-ink-primary leading-loose">
+            문을 열고 들어서자마자 짙은 원두 향과 함께 잔잔한 어쿠스틱 음악이 반겨주었습니다. 창가 쪽에는 혼자 방문한 이들이 사색하거나 책을 읽기 좋은 긴 원목 테이블이 마련되어 있었고, 벽면 서가에는 커피 원산지 도서와 디자인 잡지들이 정갈하게 꽂혀 있어 공간의 품격을 더합니다.
+          </p>
+</div>
+<!-- Inline Photo Marker Block 2 -->
+<div class="my-space-md p-space-md rounded-xl bg-canvas-bg-alt flex flex-col sm:flex-row items-center gap-space-md shadow-xs group">
+<div class="w-full sm:w-44 h-32 rounded-lg overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up artisanal flat white coffee in ceramic textured beige cup on dark rustic wooden table, latte art rosette, serene cozy ambiance, soft warm Scandinavian aesthetic photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbMdFVJeOnPuSRUx1U4B6nYuLeHfHr-uZUvt5Q17lK0z_QKzJ5j1XAWrNK7gI12uVp_Eam6Ewh8VYEvgPx4asgjQl0DvE5_1FWIInEIusYeEOdiVrrT5quFnrs3ZxNyqGbE_26NV2TyVI85C5sSA3lvnm2SdT34LADlsCrMWD-tiVlWX8AYIz7A-rihawb_OKeFfa7VcUR32I56nUDL14jZYWLdgIf4Cmu2kuH_mLS-TpoulcJ8mX2"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface text-[10px] font-mono">
+              RAW 3.1MB
+            </div>
+</div>
+<div class="flex flex-col justify-between w-full h-full gap-2">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-status-observation-bg text-status-observation-text font-caption text-[12px] font-semibold">
+                  [사진 02] 시그니처 플랫화이트
+                </span>
+<span class="font-code-inline text-[11px] text-ink-muted">IMG_8827.JPG</span>
+</div>
+<p class="font-label-md text-label-md text-ink-secondary">
+                네이버 블로그 본문 사진 삽입 위치 02 — 라떼 아트와 거친 원목 질감 질감 대비 강조
+              </p>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto text-ink-muted font-caption text-caption">
+<button class="hover:text-primary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">swap_vert</span> 순서 변경
+              </button>
+<span>•</span>
+<button class="hover:text-primary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span> 사진 교체
+              </button>
+<span>•</span>
+<button class="hover:text-error flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">delete</span> 삭제
+              </button>
+</div>
+</div>
+</div>
+<!-- Heading 3 -->
+<h2 class="font-section-title text-section-title text-ink-primary font-bold mt-space-md mb-space-sm flex items-center gap-2">
+<span class="w-1.5 h-5 rounded-full bg-primary-container inline-block"></span>
+          고소한 견과류 풍미의 시그니처 커피
+        </h2>
+<p class="font-body-editorial text-body-editorial text-ink-primary leading-loose mb-space-sm">
+          이날 선택한 시그니처 플랫화이트는 기분 좋은 묵직함이 돋보였습니다. 산미를 덜어내고 견과류의 고소함과 카카오의 은은한 단맛을 극대화한 블렌딩 덕분에 첫 모금부터 마지막까지 밀도 높은 만족감을 전해주었습니다.
+        </p>
+<!-- Bullet Highlights Box -->
+<div class="my-space-sm p-space-md rounded-xl bg-canvas-bg-alt flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-ink-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">bookmark_heart</span>
+            에디터 체크 포인트 요약
+          </span>
+<ul class="flex flex-col gap-1.5 text-ink-secondary font-body-ui text-body-ui pl-2">
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">•</span>
+<span><strong>원두 특성:</strong> 산미를 억제한 묵직한 다크 로스팅 블렌드 (견과류 &amp; 다크초콜릿 노트)</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">•</span>
+<span><strong>공간 추천:</strong> 1인 노트북 작업이나 잔잔한 독서를 즐기기에 이상적인 1인 전용 좌석 구비</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="text-primary font-bold">•</span>
+<span><strong>방문 팁:</strong> 오후 2시 이전 방문 시 자연 채광이 서가 쪽으로 깊게 들어옵니다.</span>
+</li>
+</ul>
+</div>
+<!-- Inline Photo Marker Block 3 -->
+<div class="my-space-md p-space-md rounded-xl bg-canvas-bg-alt flex flex-col sm:flex-row items-center gap-space-md shadow-xs group">
+<div class="w-full sm:w-44 h-32 rounded-lg overflow-hidden shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sunlit quiet corner of cafe with bookshelves and single guest reading, warm afternoon shadows, peaceful minimalist atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkku4LtK-xflrHwOzDy4OWzu8VVZGGEEOiAdxUdYd5fXet5FgC4lumjY9mnU6KP0tTjRILrUyLmApxuLlBerpJ9fQyH1FvGEZu51kSEyCc_U1pao4dMz1V6PbNbqxxCgvxs0ScUatufMnAU9s2YyhcXt-KPQyPDJQRdMIfte6EhgWs7tIL7kx4joFywCrgVNNnwAdV8A7I6vdrn6Z6l_v0WylH4YWjSCz-9KQ0TMituzcqCYwA4b0u"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-inverse-surface/80 text-inverse-on-surface text-[10px] font-mono">
+              RAW 2.9MB
+            </div>
+</div>
+<div class="flex flex-col justify-between w-full h-full gap-2">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-status-observation-bg text-status-observation-text font-caption text-[12px] font-semibold">
+                  [사진 03] 창가 서가와 채광
+                </span>
+<span class="font-code-inline text-[11px] text-ink-muted">IMG_8835.JPG</span>
+</div>
+<p class="font-label-md text-label-md text-ink-secondary">
+                네이버 블로그 본문 사진 삽입 위치 03 — 맺음말 직전 서정적인 마무리 컷
+              </p>
+</div>
+<div class="flex items-center gap-space-xs self-start sm:self-auto text-ink-muted font-caption text-caption">
+<button class="hover:text-primary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">swap_vert</span> 순서 변경
+              </button>
+<span>•</span>
+<button class="hover:text-primary flex items-center gap-0.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span> 사진 교체
+              </button>
+</div>
+</div>
+</div>
+<p class="font-body-editorial text-body-editorial text-ink-primary leading-loose mt-space-sm">
+          골목의 고요함이 그리워질 때마다 망설임 없이 다시 찾아갈 만한 소중한 안식처를 발견했습니다. 나만의 속도로 커피 한 잔의 시간을 누리고 싶은 분들께 조용히 권해드립니다.
+        </p>
+<!-- Editorial Document Footer Stats -->
+<div class="mt-space-xl pt-space-md border-t-0 bg-surface-container-low p-space-md rounded-xl flex items-center justify-between text-ink-muted font-caption text-caption">
+<div class="flex items-center gap-space-md">
+<span>본문 공백 포함 <strong>1,420자</strong></span>
+<span>공백 제외 <strong>1,084자</strong></span>
+<span>예상 소요 시간 <strong>2분 30초</strong></span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>네이버 알고리즘 최적 길이</span>
+</div>
+</div>
+</article>
+</main>
+<!-- RIGHT PANEL: Context Inspection & Validation Engine (3.5 Cols) -->
+<aside class="lg:col-span-3 xl:col-span-3 flex flex-col gap-space-sm">
+<div class="bg-surface-white rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Panel Tabs -->
+<div class="grid grid-cols-3 bg-surface-container-low p-1 gap-1">
+<button class="tab-btn py-1.5 text-center rounded-lg bg-surface-white text-ink-primary font-label-md text-label-md font-semibold shadow-xs" id="tabQuality" type="button">
+            품질 검토
+          </button>
+<button class="tab-btn py-1.5 text-center rounded-lg text-ink-muted hover:text-ink-primary font-label-md text-label-md font-medium transition-colors" id="tabEvidence" type="button">
+            근거 분석
+          </button>
+<button class="tab-btn py-1.5 text-center rounded-lg text-ink-muted hover:text-ink-primary font-label-md text-label-md font-medium transition-colors" id="tabVersions" type="button">
+            버전 기록
+          </button>
+</div>
+<!-- TAB 1 CONTENT: Quality & Verification Engine (Active) -->
+<div class="p-space-md flex flex-col gap-space-md" id="panelQualityContent">
+<!-- Readiness Score Card -->
+<div class="p-space-sm rounded-xl bg-status-success-bg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-status-success-text font-semibold uppercase tracking-wider">Publish Readiness</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-page-title text-page-title text-status-success-text font-bold">94</span>
+<span class="font-caption text-caption text-status-success-text">/ 100점</span>
+</div>
+</div>
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3"></path>
+<path class="text-tertiary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="material-symbols-outlined text-[20px] text-tertiary absolute">done_all</span>
+</div>
+</div>
+<!-- Quality Alerts: Issue 1 (Overstatement / Unverified Superlative) -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption font-semibold text-ink-muted uppercase tracking-wider">개선 제안 (1건)</span>
+<span class="px-2 py-0.5 rounded text-[11px] bg-status-warning-bg text-status-warning-text font-medium">과장 표현 주의</span>
+</div>
+<div class="p-space-sm rounded-xl bg-status-warning-bg/40 flex flex-col gap-2">
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-status-warning-text text-[18px] shrink-0 mt-0.5">warning</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">단정적 최상급 표현 검출</span>
+<p class="font-caption text-caption text-ink-muted leading-tight mt-0.5">
+                    "성수동에서 가장 완벽하고 독보적인 커피 맛" — 원본 메모에 없는 주관적 최상급 수식어입니다.
+                  </p>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-white flex flex-col gap-1.5 shadow-2xs">
+<span class="font-caption text-[11px] text-ink-muted">AI 팩트 기반 수정 제안:</span>
+<span class="font-label-md text-label-md text-primary font-medium">"깊고 고소한 풍미가 인상적인 플랫화이트"</span>
+<div class="flex items-center gap-space-xs mt-1 pt-1 border-t-0">
+<button class="px-2.5 py-1 rounded bg-primary-container hover:bg-accent-hover text-on-primary font-caption text-caption font-semibold transition-colors" type="button">
+                    추천 수정 적용
+                  </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-ink-muted font-caption text-caption transition-colors" type="button">
+                    무시하기
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Passed Checklist -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-caption text-caption font-semibold text-ink-muted uppercase tracking-wider">안전 검증 항목 (4/4 통과)</span>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-status-success-text">check_circle</span>
+<span class="font-label-md text-label-md text-ink-primary">사용자 사실 근거 일치</span>
+</div>
+<span class="font-code-inline text-[11px] text-status-success-text">100% 매칭</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-status-success-text">check_circle</span>
+<span class="font-label-md text-label-md text-ink-primary">네이버 검색 어뷰징 방지</span>
+</div>
+<span class="font-code-inline text-[11px] text-status-success-text">밀도 2.1% (정상)</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-status-success-text">check_circle</span>
+<span class="font-label-md text-label-md text-ink-primary">상업적 금칙어 / 의료법 준수</span>
+</div>
+<span class="font-code-inline text-[11px] text-status-success-text">위반 0건</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-status-success-text">check_circle</span>
+<span class="font-label-md text-label-md text-ink-primary">사진-텍스트 위치 정합성</span>
+</div>
+<span class="font-code-inline text-[11px] text-status-success-text">완벽 배치</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2 CONTENT: Evidence Traceability (Toggled via JS) -->
+<div class="hidden p-space-md flex flex-col gap-space-md" id="panelEvidenceContent">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-ink-muted uppercase font-semibold">입력 사실 vs AI 생성 대조</span>
+<span class="px-2 py-0.5 rounded bg-status-observation-bg text-status-observation-text text-[11px] font-mono">신뢰도 검증</span>
+</div>
+<!-- Section: Confirmed User Memory -->
+<div class="p-space-sm rounded-xl bg-canvas-bg-alt flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-status-success-text">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span class="font-label-md text-label-md font-semibold text-ink-primary">확인된 기억 사실 (3건)</span>
+</div>
+<ul class="text-xs text-ink-secondary flex flex-col gap-1 pl-5 list-disc">
+<li>토요일 오후 2시 방문</li>
+<li>플랫화이트 주문 (다크 블렌드)</li>
+<li>조용하고 혼자 책 읽기 좋은 분위기</li>
+</ul>
+</div>
+<!-- Section: Photo Vision AI Extraction -->
+<div class="p-space-sm rounded-xl bg-canvas-bg-alt flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-status-observation-text">
+<span class="material-symbols-outlined text-[16px]">photo_camera_back</span>
+<span class="font-label-md text-label-md font-semibold text-ink-primary">사진 비전 분석 반영 (3건)</span>
+</div>
+<ul class="text-xs text-ink-secondary flex flex-col gap-1 pl-5 list-disc">
+<li>외관 붉은 벽돌 질감 및 황동 현판</li>
+<li>매장 내부 긴 원목 테이블과 벽면 서가</li>
+<li>도자기 컵에 담긴 라떼 아트</li>
+</ul>
+</div>
+<!-- Section: Safely Omitted Unverified Data -->
+<div class="p-space-sm rounded-xl bg-status-critical-bg/40 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-status-critical-text">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+<span class="font-label-md text-label-md font-semibold text-ink-primary">미확인 정보 (본문 제외 완료)</span>
+</div>
+<p class="text-xs text-ink-muted leading-relaxed">
+              정확한 휴무일, 주차 공간 여부, 가격 정보는 사용자 입력 데이터에 포함되지 않아 <strong>할루시네이션 방지를 위해 본문에서 자동으로 생략</strong>되었습니다.
+            </p>
+</div>
+</div>
+<!-- TAB 3 CONTENT: Version History (Toggled via JS) -->
+<div class="hidden p-space-md flex flex-col gap-space-sm" id="panelVersionsContent">
+<span class="font-caption text-caption text-ink-muted uppercase font-semibold">편집 히스토리</span>
+<div class="flex flex-col gap-2">
+<div class="p-2.5 rounded-lg bg-accent-subtle flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-primary">v3.4 (현재 활성 버전)</span>
+<span class="text-[11px] text-ink-muted">오늘 14:32 • 이수진 에디터</span>
+<span class="text-xs text-ink-secondary mt-1">블로그 검색 키워드 최적화 반영</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-white text-[10px] text-primary font-bold">CURRENT</span>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-start justify-between cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-ink-primary">v3.0 (과장 표현 개선안)</span>
+<span class="text-[11px] text-ink-muted">오늘 14:15 • AI 자동 리팩토링</span>
+<span class="text-xs text-ink-muted mt-1">최상급 단정 표현 완화</span>
+</div>
+<button class="text-xs text-ink-muted hover:text-ink-primary font-medium" type="button">복원</button>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-start justify-between cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-ink-primary">v2.0 (사진 3장 매핑 완료)</span>
+<span class="text-[11px] text-ink-muted">오늘 13:40 • 비전 분석 엔진</span>
+<span class="text-xs text-ink-muted mt-1">EXIF 기준 위치 자동 지정</span>
+</div>
+<button class="text-xs text-ink-muted hover:text-ink-primary font-medium" type="button">복원</button>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-start justify-between cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-ink-primary">v1.0 (초기 메모 드래프트)</span>
+<span class="text-[11px] text-ink-muted">오늘 13:20 • 원본 생성</span>
+<span class="text-xs text-ink-muted mt-1">스토리 카드로부터 최초 변환</span>
+</div>
+<button class="text-xs text-ink-muted hover:text-ink-primary font-medium" type="button">복원</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Platform Export Hint Card -->
+<div class="bg-surface-white rounded-xl p-space-md shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 text-ink-primary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px] text-primary">tips_and_updates</span>
+<span>네이버 블로그 복사 팁</span>
+</div>
+<p class="font-caption text-caption text-ink-muted leading-relaxed">
+          '네이버 블로그용 복사' 클릭 시 서식과 본문이 서식 클립보드에 담기며, [사진 마커] 자리에는 네이버 블로그 에디터 사진 업로드에 바로 쓸 수 있는 넘버링 안내 태그가 자동 삽입됩니다.
+        </p>
+</div>
+</aside>
+</div>
+<!-- MODAL: One-Click Naver Blog Export & Copy Package (Toggled via JS) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm" id="copyBlogModal">
+<div class="bg-surface-white rounded-xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="p-1 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</span>
+<h3 class="font-section-title text-section-title text-ink-primary font-bold">네이버 블로그 전송 및 복사</h3>
+</div>
+<button class="text-ink-muted hover:text-ink-primary p-1 rounded-lg transition-colors" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Step 1: Copy Type Preference -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">1. 본문 복사 옵션 선택</span>
+<label class="p-space-sm rounded-lg bg-canvas-bg-alt flex items-start gap-space-xs cursor-pointer hover:bg-accent-subtle transition-colors">
+<input checked="" class="mt-1 accent-primary" name="copyOption" type="radio" value="rich"/>
+<div class="flex flex-col">
+<span class="font-body-ui-medium text-body-ui-medium font-semibold text-ink-primary">Rich Text 복사 (서식 및 이미지 위치 마커 포함)</span>
+<span class="font-caption text-caption text-ink-muted">네이버 스마트에디터 ONE에 Ctrl+V로 붙여넣으면 소제목, 볼드, 사진 번호가 그대로 유지됩니다.</span>
+</div>
+</label>
+<label class="p-space-sm rounded-lg bg-canvas-bg-alt flex items-start gap-space-xs cursor-pointer hover:bg-accent-subtle transition-colors">
+<input class="mt-1 accent-primary" name="copyOption" type="radio" value="plain"/>
+<div class="flex flex-col">
+<span class="font-body-ui-medium text-body-ui-medium font-semibold text-ink-primary">순수 텍스트(Plain Text) 복사</span>
+<span class="font-caption text-caption text-ink-muted">스타일 없이 순수 글자 및 문단 구조만 복사합니다.</span>
+</div>
+</label>
+</div>
+<!-- Step 2: Image Assets Bundle Option -->
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">2. 본문 사진 패키지 동시 다운로드</span>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">folder_zip</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-ink-primary font-medium">선택된 고화질 이미지 3장 일괄 번들</span>
+<span class="font-caption text-caption text-ink-muted">01_cafe_exterior.jpg, 02_flat_white.jpg, 03_bookshelf.jpg</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Preview snippet -->
+<div class="p-2.5 rounded-lg bg-canvas-bg-alt flex flex-col gap-1">
+<span class="font-code-inline text-[11px] text-ink-muted">클립보드 미리보기:</span>
+<p class="font-code-inline text-code-inline text-ink-secondary truncate">
+            [성수동 골목길에서 만난 나만의 아지트...] \n\n 복잡한 성수동 메인 거리에서 두 블록 정도 벗어나면... \n [사진 01 삽입 위치]
+          </p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<span class="hidden text-status-success-text font-caption text-caption font-semibold flex items-center gap-1" id="copySuccessMsg">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+          클립보드에 복사 완료!
+        </span>
+<div class="flex items-center gap-space-xs ml-auto">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-white hover:bg-surface-container text-ink-secondary font-label-md text-label-md transition-colors" id="cancelModalBtn" type="button">
+            취소
+          </button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-primary-container hover:bg-accent-hover text-on-primary font-label-md text-label-md font-semibold shadow-sm transition-all" id="executeCopyBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">copy_all</span>
+<span>복사하고 네이버 블로그 열기</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // UI Tab Switching logic for Right Context Inspector
+  const tabQuality = document.getElementById('tabQuality');
+  const tabEvidence = document.getElementById('tabEvidence');
+  const tabVersions = document.getElementById('tabVersions');
+
+  const panelQualityContent = document.getElementById('panelQualityContent');
+  const panelEvidenceContent = document.getElementById('panelEvidenceContent');
+  const panelVersionsContent = document.getElementById('panelVersionsContent');
+
+  function resetTabs() {
+    [tabQuality, tabEvidence, tabVersions].forEach(btn => {
+      btn.className = 'tab-btn py-1.5 text-center rounded-lg text-ink-muted hover:text-ink-primary font-label-md text-label-md font-medium transition-colors';
+    });
+    panelQualityContent.classList.add('hidden');
+    panelEvidenceContent.classList.add('hidden');
+    panelVersionsContent.classList.add('hidden');
+  }
+
+  function setActiveTab(button, panel) {
+    resetTabs();
+    button.className = 'tab-btn py-1.5 text-center rounded-lg bg-surface-white text-ink-primary font-label-md text-label-md font-semibold shadow-xs';
+    panel.classList.remove('hidden');
+  }
+
+  tabQuality.addEventListener('click', () => setActiveTab(tabQuality, panelQualityContent));
+  tabEvidence.addEventListener('click', () => setActiveTab(tabEvidence, panelEvidenceContent));
+  tabVersions.addEventListener('click', () => setActiveTab(tabVersions, panelVersionsContent));
+
+  // Also hook Top Bar '버전 히스토리' button to navigate to tab 3
+  const versionHistoryBtn = document.getElementById('versionHistoryBtn');
+  if (versionHistoryBtn) {
+    versionHistoryBtn.addEventListener('click', () => {
+      setActiveTab(tabVersions, panelVersionsContent);
+    });
+  }
+
+  // Toggle Alternate SEO Titles
+  const toggleAltTitlesBtn = document.getElementById('toggleAltTitlesBtn');
+  const altTitlesDropdown = document.getElementById('altTitlesDropdown');
+  if (toggleAltTitlesBtn && altTitlesDropdown) {
+    toggleAltTitlesBtn.addEventListener('click', () => {
+      altTitlesDropdown.classList.toggle('hidden');
+    });
+  }
+
+  // Copy Modal controls
+  const copyBlogModalTrigger = document.getElementById('copyBlogModalTrigger');
+  const copyBlogModal = document.getElementById('copyBlogModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const cancelModalBtn = document.getElementById('cancelModalBtn');
+  const executeCopyBtn = document.getElementById('executeCopyBtn');
+  const copySuccessMsg = document.getElementById('copySuccessMsg');
+
+  function openModal() {
+    copyBlogModal.classList.remove('hidden');
+    copySuccessMsg.classList.add('hidden');
+  }
+
+  function closeModal() {
+    copyBlogModal.classList.add('hidden');
+  }
+
+  if (copyBlogModalTrigger) copyBlogModalTrigger.addEventListener('click', openModal);
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+  if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
+
+  // Click outside modal to close
+  copyBlogModal.addEventListener('click', (e) => {
+    if (e.target === copyBlogModal) {
+      closeModal();
+    }
+  });
+
+  // Execute copy mock interaction
+  if (executeCopyBtn) {
+    executeCopyBtn.addEventListener('click', () => {
+      copySuccessMsg.classList.remove('hidden');
+      setTimeout(() => {
+        closeModal();
+      }, 900);
+    });
+  }
+</script></main></div></body></html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#8c716b", "on-primary": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed": "#00210a", "on-tertiary-fixed-variant": "#005323", "on-surface-variant": "#59413c", "status-observation-text": "#1D4ED8", "on-primary-fixed-variant": "#8a1b07", "surface-white": "#FFFFFF", "on-secondary-fixed": "#1c1b1b", "canvas-bg-alt": "#F7F7F3", "status-success-text": "#15803D", "tertiary-fixed": "#95f8a7", "tertiary-fixed-dim": "#79db8d", "accent-hover": "#E05338", "status-success-bg": "#F0FDF4", "on-primary-container": "#5c0900", "primary-fixed-dim": "#ffb4a5", "status-observation-bg": "#EFF6FF", "status-warning-text": "#B45309", "on-tertiary-container": "#003313", "status-critical-text": "#DC2626", "error": "#ba1a1a", "on-error": "#ffffff", "inverse-on-surface": "#f2f0f0", "on-secondary": "#ffffff", "secondary": "#5f5e5e", "background": "#fbf9f9", "on-primary-fixed": "#3e0400", "border-subtle": "#EAEAE5", "surface-bright": "#fbf9f9", "inverse-primary": "#ffb4a5", "border-strong": "#E5E5E0", "surface-container-highest": "#e3e2e2", "primary-container": "#f2664b", "on-tertiary": "#ffffff", "primary": "#ac341e", "surface-variant": "#e3e2e2", "inverse-surface": "#303031", "surface": "#fbf9f9", "ink-muted": "#737373", "surface-container": "#efeded", "surface-dim": "#dbdad9", "status-warning-bg": "#FFFBEB", "primary-fixed": "#ffdad3", "canvas-bg": "#FAFAF7", "secondary-fixed": "#e5e2e1", "tertiary-container": "#43a55d", "surface-container-high": "#e9e8e7", "on-secondary-container": "#636262", "on-error-container": "#93000a", "on-surface": "#1b1c1c", "on-secondary-fixed-variant": "#474746", "surface-tint": "#ac341e", "outline-variant": "#e0bfb9", "tertiary": "#006d30", "surface-container-lowest": "#ffffff", "surface-container-low": "#f5f3f3", "accent-subtle": "#FFF1EE", "secondary-container": "#e2dfde", "status-critical-bg": "#FEF2F2", "on-background": "#1b1c1c", "ink-secondary": "#262626", "secondary-fixed-dim": "#c8c6c5", "ink-primary": "#171717" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "gutter-lg": "2rem", "space-md": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "margin": "2rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "gutter-sm": "1rem" }, "fontFamily": { "body-ui": [ "Plus Jakarta Sans" ], "code-inline": [ "JetBrains Mono" ], "display-mobile": [ "Plus Jakarta Sans" ], "caption": [ "Plus Jakarta Sans" ], "page-title-mobile": [ "Plus Jakarta Sans" ], "body-editorial": [ "Plus Jakarta Sans" ], "label-md": [ "Plus Jakarta Sans" ], "body-ui-medium": [ "Plus Jakarta Sans" ], "page-title": [ "Plus Jakarta Sans" ], "section-title": [ "Plus Jakarta Sans" ], "display": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-ui": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" } ], "code-inline": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "display-mobile": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "caption": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "page-title-mobile": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" } ], "body-editorial": [ "16px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "500" } ], "body-ui-medium": [ "15px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "500" } ], "page-title": [ "28px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "section-title": [ "20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "display": [ "44px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" } ] } } } };</script></head><body class="bg-canvas-bg font-body-ui text-ink-primary antialiased selection:bg-accent-subtle selection:text-primary"><aside class="fixed left-0 top-0 h-screen w-[240px] bg-canvas-bg-alt z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-md pt-space-md pb-space-sm"><div class="flex items-center gap-space-sm"><img alt="POSTORY Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbLEsOe1rVarHjAwdf53shx-rblI-jG_OtRdYpQEq61lQGz2-jwCpBWsJiDN-uK-hNt3x-JvKLAW2SJmLHuT-W40e76xBkNhfghgyWP0CsS4P3zlxjrx6BVgPZfUCkLXNf3qWBrLfkZDD9zKMynLxxZVnxvPDa2Uy7SIVOGpCF1x6L2ozGTTfRbvEYo4x3HiAhuoVzZLXKO36HYy_U8hvY2Zbo9F_vxxciBIWJPAMici7tBB2rFcSx"/><div class="flex flex-col"><span class="font-page-title text-page-title-mobile tracking-tight text-ink-primary leading-none">POSTORY</span></div></div><p class="mt-space-xs font-caption text-caption text-ink-muted pl-[2px]">One Story. Every Channel.</p></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-md" data-active-classes="bg-accent-subtle text-primary font-body-ui-medium font-medium"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-ink-secondary hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="home" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">cottage</span><span class="font-label-md text-label-md">홈 (Home)</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg transition-all duration-150 bg-accent-subtle text-primary font-body-ui-medium font-medium" data-path="create" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">edit_square</span><span class="font-label-md text-label-md">새 스토리 작성</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-ink-secondary hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="library" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">folder_open</span><span class="font-label-md text-label-md">콘텐츠 라이브러리</span></a></nav><div class="my-space-md mx-space-md h-px bg-border-subtle"></div><div class="px-space-sm"><div class="px-space-sm mb-space-xs"><span class="font-caption text-caption font-semibold tracking-wide text-ink-muted uppercase">스마트 확장</span></div><div class="flex flex-col gap-space-xs"><div class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-ink-muted cursor-not-allowed opacity-80"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">record_voice_over</span><span class="font-label-md text-label-md">내 보이스 학습</span></div><span class="font-caption text-caption px-space-xs py-[1px] rounded bg-surface-container-high text-secondary">Soon</span></div><div class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-ink-muted cursor-not-allowed opacity-80"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">calendar_month</span><span class="font-label-md text-label-md">발행 캘린더</span></div><span class="font-caption text-caption px-space-xs py-[1px] rounded bg-surface-container-high text-secondary">Soon</span></div><div class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-ink-muted cursor-not-allowed opacity-80"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">insights</span><span class="font-label-md text-label-md">성과 인사이트</span></div><span class="font-caption text-caption px-space-xs py-[1px] rounded bg-surface-container-high text-secondary">Soon</span></div></div></div></div><div class="flex flex-col p-space-sm gap-space-sm"><div class="p-space-sm rounded-lg bg-surface-white shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex justify-between items-center mb-space-xs"><span class="font-caption text-caption text-ink-secondary font-medium">이번 달 생성량</span><span class="font-caption text-caption font-semibold text-primary">8 / 20</span></div><div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 40%"></div></div><p class="mt-space-xs font-caption text-[11px] leading-tight text-ink-muted">이번 달 8/20개 스토리 생성</p></div><nav class="flex flex-col" data-active-classes="bg-accent-subtle text-primary font-medium"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg text-ink-secondary hover:bg-surface-container-high hover:text-on-surface transition-all duration-150" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px] text-ink-muted">settings</span><span class="font-label-md text-label-md">설정 (Settings)</span></a></nav><div class="flex items-center justify-between p-space-xs rounded-lg hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtpIpxY-urLiqc9E5d657niG4bGmdr7V6jmw8i_dbDwrT3mHMwbv3LRha-Ji0lu16NpK5bDdya7vFs94_qHZYzA0mkDtZuV3igBM9Mh77t2EfX3AHigHk6QYTAI3nDJfiqJg230BujNLqqo43cNi7xQseRXaMglBHn7cH270tKxa92puft_51xM_3cFKivvMz36WwhEaowwWixeQM-u3obYEduBQzYAUepqyMLJsQU6zm_xE1zYv9O"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-ink-primary font-medium truncate">이수진</span><span class="font-caption text-caption text-ink-muted truncate">Creator</span></div></div><button aria-label="계정 메뉴" class="text-ink-muted hover:text-on-surface p-space-xs rounded" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></aside><div class="pl-[240px]"><header class="fixed top-0 left-[240px] right-0 h-14 bg-surface-white/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-xs text-ink-muted font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">folder</span><span class="hover:text-ink-primary cursor-pointer transition-colors">워크스페이스</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="text-ink-primary font-medium">에디토리얼 스튜디오</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-status-success-bg text-status-success-text font-caption text-caption"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span><span>자동 저장됨</span></div><div class="h-4 w-px bg-border-subtle"></div><div class="flex items-center gap-space-xs"><button aria-label="도움말" class="p-space-xs rounded-lg text-ink-muted hover:text-on-surface hover:bg-canvas-bg-alt transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><button aria-label="알림" class="p-space-xs rounded-lg text-ink-muted hover:text-on-surface hover:bg-canvas-bg-alt transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-primary"></span></button></div><a class="inline-flex items-center gap-space-xs px-space-md py-1.5 bg-primary-container hover:bg-accent-hover text-on-primary font-label-md text-label-md font-semibold rounded-lg shadow-sm transition-all duration-150 transform active:scale-[0.99]" data-path="create" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>새 콘텐츠 만들기</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0 ml-space-xs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtpIpxY-urLiqc9E5d657niG4bGmdr7V6jmw8i_dbDwrT3mHMwbv3LRha-Ji0lu16NpK5bDdya7vFs94_qHZYzA0mkDtZuV3igBM9Mh77t2EfX3AHigHk6QYTAI3nDJfiqJg230BujNLqqo43cNi7xQseRXaMglBHn7cH270tKxa92puft_51xM_3cFKivvMz36WwhEaowwWixeQM-u3obYEduBQzYAUepqyMLJsQU6zm_xE1zYv9O"/></div></div></header><main class="relative pt-14 bg-canvas-bg min-h-screen"><div class="flex flex-col w-full">
+<div class="max-w-[1360px] mx-auto w-full px-space-lg py-space-xl">
+<!-- Top Editorial Header & Status Bar -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-ink-muted font-label-md text-label-md">
+<span class="hover:text-ink-primary transition-colors cursor-pointer">스토리 홈</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-medium">정보 입력 (Story Input)</span>
+</div>
+<div class="flex items-baseline gap-space-md">
+<h1 class="font-page-title text-page-title text-ink-primary tracking-tight">새 스토리 만들기</h1>
+<span class="font-caption text-caption text-ink-muted uppercase tracking-wider font-code-inline">Phase 01 / Input &amp; Evidence Grounding</span>
+</div>
+</div>
+<!-- Quick Session Context Tracker -->
+<div class="flex items-center gap-space-sm bg-surface-white px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-ink-muted">데이터 무결성 검증 모드</span>
+<span class="font-label-md text-label-md font-semibold text-ink-primary">사실 기반 생성 (No Hallucination)</span>
+</div>
+</div>
+</header>
+<!-- Main 2-Column Responsive Workspace Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Media Upload & Chronological Proof Ordering (5 cols on lg) -->
+<section class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Photo Management Canvas Box -->
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">photo_library</span>
+<h2 class="font-section-title text-section-title text-ink-primary">사진 업로드</h2>
+<span class="font-caption text-caption text-ink-muted ml-1">(최대 10장)</span>
+</div>
+<div class="flex items-center gap-space-xs bg-accent-subtle text-primary px-2.5 py-1 rounded-full font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span id="photo-counter">3 / 10장 업로드됨</span>
+</div>
+</div>
+<p class="font-body-ui text-body-ui text-ink-secondary">
+            사진 순서대로 시각적 서사가 조립됩니다. 드래그하여 서사의 흐름을 재배치할 수 있습니다.
+          </p>
+<!-- Interactive Photo Grid -->
+<div class="grid grid-cols-2 gap-space-sm" id="photo-drag-grid">
+<!-- Photo 01 Card -->
+<article class="group relative rounded-lg overflow-hidden bg-canvas-bg shadow-sm flex flex-col transition-all duration-200 hover:shadow-md">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Warm sunlight on a rustic textured brick cafe exterior in Seongsu Seoul, artisanal brass storefront lettering, delicate morning shadows, cozy editorial architecture photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIQ1DFddJd0W88DrBywNldw4vhOD70d5D_7dCSe4vfkz9TZTbLQhwMXL5f3vJBVD6-ZhsoT9GIUWZAdCrhmSJOsGEDmgYUC5UlGigCjBJGiBVcsQOMDnLxF_94VwiejttlEHrWosrlLubIp_CD2PFRGvSo8sR81cF-l5N9Xa_qdcQKBq-Y4frPgiwF1wnw633Hi4D0V9GghHwHuOub9ZUK0ZnRNDAjASg0YOGXs46JCqDN2Sywjn3t"/>
+<div class="absolute top-2 left-2 bg-ink-primary/85 backdrop-blur-md text-surface-white px-2 py-0.5 rounded-full font-caption text-caption font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>01</span>
+</div>
+<div class="absolute top-2 right-2 flex items-center gap-1 opacity-90 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-full bg-surface-white/90 backdrop-blur-sm text-ink-secondary hover:text-error flex items-center justify-center shadow-sm transition-colors" title="사진 삭제" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 bg-surface-white/80 backdrop-blur-sm text-ink-secondary px-1.5 py-0.5 rounded text-[11px] font-caption cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+<span>순서 이동</span>
+</div>
+</div>
+<div class="p-2.5 bg-surface-white flex flex-col gap-0.5">
+<span class="font-caption text-caption text-ink-muted">포커스 랜드마크</span>
+<p class="font-label-md text-label-md text-ink-primary font-medium truncate">카페 외관 및 간판</p>
+</div>
+</article>
+<!-- Photo 02 Card -->
+<article class="group relative rounded-lg overflow-hidden bg-canvas-bg shadow-sm flex flex-col transition-all duration-200 hover:shadow-md">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Artisanal flat white coffee served in a warm ceramic cup with intricate latte art on a reclaimed dark oak wood table, warm golden hour ambient lighting, tactile foam texture close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRc3vcB1VUZzyIEOGYWfswizL9uVTicsqiufFwILGT_fmNmv5c7OIF4HdlD0AVFjoPF-ANbUWFYwYSFTcgwNKNd4HU__H0MthVgNSUh2T_IvN1woqGhecbVsLC1d5RS0InXTcjliI4LByHqg6BCR9rD7xWJFd5ZYX8oUBC9hYk-EoM4ejSWLwn5oSEciXfhYA8iKz62i2cqQCTQOsAM_PkCWgOAGvcKplIukP5o47l7onuFAKzLI5R"/>
+<div class="absolute top-2 left-2 bg-ink-primary/85 backdrop-blur-md text-surface-white px-2 py-0.5 rounded-full font-caption text-caption font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>02</span>
+</div>
+<div class="absolute top-2 right-2 flex items-center gap-1 opacity-90 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-full bg-surface-white/90 backdrop-blur-sm text-ink-secondary hover:text-error flex items-center justify-center shadow-sm transition-colors" title="사진 삭제" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 bg-surface-white/80 backdrop-blur-sm text-ink-secondary px-1.5 py-0.5 rounded text-[11px] font-caption cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+<span>순서 이동</span>
+</div>
+</div>
+<div class="p-2.5 bg-surface-white flex flex-col gap-0.5">
+<span class="font-caption text-caption text-ink-muted">메뉴 및 미식 경험</span>
+<p class="font-label-md text-label-md text-ink-primary font-medium truncate">드립 커피 &amp; 라떼</p>
+</div>
+</article>
+<!-- Photo 03 Card -->
+<article class="group relative rounded-lg overflow-hidden bg-canvas-bg shadow-sm flex flex-col transition-all duration-200 hover:shadow-md">
+<div class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Sunlit urban cafe terrace corner lined with wooden bookshelves curated with art magazines, large glass window pane, potted monstera plant, serene afternoon stillness in Seoul" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhuA1bGZW3Vp9hwylq0b-p2UqeUURT7F7ScSwcGhC5pBhVFQg9esF2fbxHLHdpdkxRk9y-NSCMAl2tr4EDIGKcmW90lgUXgfv1N9UvmUwG11MLXQVrj93thKSgp2ma_ls3DcV1wM0FG4qMdvdA66XLNejM2ZY9AdSM96YxnqYstQdFAojDLQX4-P93fpYSiJDqwHHLmBUw0z4Ef38ALHJImy-NpNQqS0EMezGTGPKDriu1EvfHR2K2"/>
+<div class="absolute top-2 left-2 bg-ink-primary/85 backdrop-blur-md text-surface-white px-2 py-0.5 rounded-full font-caption text-caption font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+<span>03</span>
+</div>
+<div class="absolute top-2 right-2 flex items-center gap-1 opacity-90 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-full bg-surface-white/90 backdrop-blur-sm text-ink-secondary hover:text-error flex items-center justify-center shadow-sm transition-colors" title="사진 삭제" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 bg-surface-white/80 backdrop-blur-sm text-ink-secondary px-1.5 py-0.5 rounded text-[11px] font-caption cursor-grab">
+<span class="material-symbols-outlined text-[14px]">drag_indicator</span>
+<span>순서 이동</span>
+</div>
+</div>
+<div class="p-2.5 bg-surface-white flex flex-col gap-0.5">
+<span class="font-caption text-caption text-ink-muted">무드 &amp; 공간감</span>
+<p class="font-label-md text-label-md text-ink-primary font-medium truncate">테라스 서가 공간</p>
+</div>
+</article>
+<!-- Upload Drop Zone Tile -->
+<label class="cursor-pointer group flex flex-col items-center justify-center aspect-[4/3] rounded-lg bg-canvas-bg-alt hover:bg-accent-subtle transition-all duration-200 text-center p-3 relative overflow-hidden">
+<input accept="image/jpeg,image/png,image/heic" class="sr-only" multiple="" type="file"/>
+<div class="w-10 h-10 rounded-full bg-surface-white flex items-center justify-center text-primary group-hover:scale-110 shadow-sm transition-transform mb-2">
+<span class="material-symbols-outlined text-[22px]">add_photo_alternate</span>
+</div>
+<span class="font-label-md text-label-md text-ink-primary font-medium group-hover:text-primary transition-colors">+ 사진 추가하기</span>
+<span class="font-caption text-caption text-ink-muted mt-0.5">JPG, PNG, HEIC</span>
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+</label>
+</div>
+<!-- Chrono Timeline Indicator SVG Mini-Visualizer -->
+<div class="bg-canvas-bg p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-ink-muted font-caption text-caption">
+<span class="material-symbols-outlined text-[16px]">auto_stories</span>
+<span>스토리 타임라인: 공간 탐색 → 음료 시음 → 서가 휴식</span>
+</div>
+<span class="font-code-inline text-code-inline text-primary font-medium">3개 컷 완성</span>
+</div>
+<!-- EXIF Privacy & Auto-detection notice badge -->
+<div class="p-space-sm rounded-lg bg-status-observation-bg text-status-observation-text flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[18px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold">촬영일시 감지 완료</span>
+<span class="font-code-inline text-[11px] px-1.5 py-0.5 rounded bg-surface-white font-medium">2026.10.03 14:20</span>
+</div>
+<p class="font-caption text-caption leading-relaxed opacity-90">
+                EXIF 시간 메타데이터가 자동 적용되었으며, 개인정보 보호를 위해 사진 속 GPS 위치 메타데이터는 포스토리 서버 업로드 즉시 안전하게 영구 제거되었습니다.
+              </p>
+</div>
+</div>
+</div>
+<!-- Evidence Grounding Guarantee Notice Card -->
+<div class="bg-surface-white rounded-xl p-space-md shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-status-success-bg text-status-success-text flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">fact_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">포스토리 팩트 앵커(Fact-Anchor)</span>
+<p class="font-caption text-caption text-ink-muted mt-0.5 leading-snug">
+              업로드된 3장의 실물 이미지 시각 정보(간판 텍스처, 음료 라떼아트, 서가 책장)를 근거로만 문장을 작성하여 무근거한 허위 수식을 100% 차단합니다.
+            </p>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: Story Setup Form (7 cols on lg) -->
+<section class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-white rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<!-- 1. Quick Experience Raw Memo Textarea -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-ink-primary flex items-center gap-1.5" for="story-memo">
+<span>어떤 기억을 콘텐츠로 만들고 싶나요?</span>
+<span class="text-primary">*</span>
+</label>
+<span class="font-caption text-caption text-ink-muted">메모 기반 사실 증강</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-canvas-bg rounded-lg p-space-md font-body-editorial text-body-editorial text-ink-primary placeholder:text-ink-muted focus:outline-none focus:bg-surface-white focus:shadow-md transition-all duration-200 resize-none leading-relaxed" id="story-memo" placeholder="장소의 분위기, 인상 깊었던 대화, 맛의 특징 등 편안하게 단어나 문장으로 적어보세요." rows="4">지난 주말 성수동에서 우연히 발견한 골목길 로스터리. 시그니처 플랫화이트가 고소했고 창가 서가 자리가 매우 아늑했다.</textarea>
+<div class="absolute bottom-3 right-3 text-ink-muted font-code-inline text-code-inline">
+<span id="char-count">68</span> / 500자
+              </div>
+</div>
+<p class="font-caption text-caption text-ink-muted flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lightbulb</span>
+              길게 쓰지 않아도 됩니다. 실제 경험한 사실(Evidence) 위주로 편하게 적어주시면 AI가 풍부한 호흡의 에디토리얼 문체로 완성합니다.
+            </p>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-surface-container"></div>
+<!-- 2. Category Selection Chips -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">카테고리 선택</span>
+<span class="font-caption text-caption text-ink-muted">맥락에 최적화된 서술 구조 매칭</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1" id="category-chips">
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">여행</button>
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">일상</button>
+<button class="category-chip active px-3.5 py-1.5 rounded-full font-label-md text-label-md font-medium transition-all duration-150 bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">coffee</span>
+<span>카페</span>
+</button>
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">맛집</button>
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">제품</button>
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">서비스</button>
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">개인 브랜딩</button>
+<button class="category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">정보/노하우</button>
+</div>
+</div>
+<!-- 3. Goal Dropdown / Segment Selector -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">콘텐츠 제작 목적</span>
+<div class="relative">
+<select class="w-full appearance-none bg-canvas-bg rounded-lg px-space-md py-2.5 font-body-ui text-body-ui text-ink-primary focus:outline-none focus:bg-surface-white focus:shadow-sm cursor-pointer pr-10">
+<option selected="" value="share-mood">경험 공유 &amp; 감성 후기 (선택됨)</option>
+<option value="info-guide">방문 가이드 &amp; 핵심 꿀팁 전달</option>
+<option value="curation">골목 산책 코스 큐레이션</option>
+<option value="brand-story">로컬 스몰 브랜드 탐방기</option>
+</select>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none text-ink-muted">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 4. Tone of Voice Chips -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">문체 및 어조 (Tone of Voice)</span>
+<span class="font-caption text-caption text-ink-muted">단일 선택</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1" id="tone-chips">
+<button class="tone-chip active px-3.5 py-1.5 rounded-full font-label-md text-label-md font-medium transition-all duration-150 bg-ink-primary text-surface-white shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px]">clock_loader_40</span>
+<span>담백한</span>
+</button>
+<button class="tone-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">친근한</button>
+<button class="tone-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">전문적인</button>
+<button class="tone-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">감성적인</button>
+<button class="tone-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">세련된</button>
+<button class="tone-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container" type="button">유쾌한</button>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-surface-container"></div>
+<!-- 5. Output Platforms Multi-select -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">동시 변환 채널 (Output Channels)</span>
+<span class="font-caption text-caption text-primary font-medium">4개 채널 모두 선택됨</span>
+</div>
+<p class="font-caption text-caption text-ink-muted">한 번의 원천 스토리 작성으로 각 플랫폼 규격과 문법에 맞춰 자동 리퍼포징됩니다.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2">
+<!-- Naver Blog Card (Flagship Emphasis) -->
+<label class="cursor-pointer relative flex items-start gap-space-sm p-3.5 rounded-xl bg-accent-subtle shadow-sm transition-all duration-200">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-primary">블로그 (Naver Copy)</span>
+<span class="font-caption text-[11px] px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary font-medium">메인 원문</span>
+</div>
+<span class="font-caption text-caption text-ink-secondary mt-0.5">상세한 사진 배치 + 호흡 긴 에디토리얼 글감</span>
+</div>
+</label>
+<!-- Instagram Card -->
+<label class="cursor-pointer relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-white hover:bg-canvas-bg shadow-sm transition-all duration-200">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">인스타그램 (Instagram)</span>
+</div>
+<span class="font-caption text-caption text-ink-muted mt-0.5">캐러셀 슬라이드 텍스트 &amp; 추천 해시태그</span>
+</div>
+</label>
+<!-- Facebook Card -->
+<label class="cursor-pointer relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-white hover:bg-canvas-bg shadow-sm transition-all duration-200">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">페이스북 (Facebook)</span>
+</div>
+<span class="font-caption text-caption text-ink-muted mt-0.5">피드 스크롤 최적화 카드뉴스형 본문 요약</span>
+</div>
+</label>
+<!-- YouTube Shorts Script Card -->
+<label class="cursor-pointer relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-white hover:bg-canvas-bg shadow-sm transition-all duration-200">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">유튜브 쇼츠 (Shorts)</span>
+</div>
+<span class="font-caption text-caption text-ink-muted mt-0.5">30초 내외 숏폼 내레이션 보이스 스크립트</span>
+</div>
+</label>
+</div>
+</div>
+<!-- 6. Legal / Sponsorship Checkbox -->
+<div class="p-space-md rounded-xl bg-canvas-bg flex items-center justify-between">
+<label class="flex items-center gap-space-sm cursor-pointer select-none">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" id="sponsor-toggle" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-ink-primary">광고 및 경제적 대가(협찬)가 포함된 콘텐츠입니다</span>
+<span class="font-caption text-caption text-ink-muted">선택 시 각 플랫폼 정책(공정위 문구 등)에 맞춘 법적 고지문이 자동 삽입됩니다.</span>
+</div>
+</label>
+<span class="font-caption text-caption text-ink-muted px-2 py-1 bg-surface-white rounded shadow-sm">표시광고법 준수</span>
+</div>
+</div>
+<!-- Sticky Bottom CTA Area -->
+<div class="sticky bottom-6 z-20 bg-surface-white/95 backdrop-blur-xl rounded-xl p-space-md shadow-xl flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-accent-subtle flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-ink-primary">원클릭 옴니채널 퍼블리싱 준비 완료</span>
+<p class="font-caption text-caption text-ink-muted truncate">AI는 업로드된 사진과 입력한 메모에서 확인 가능한 사실(Evidence)만을 바탕으로 글을 작성합니다.</p>
+</div>
+</div>
+<button class="w-full sm:w-auto px-space-xl py-3.5 bg-primary-container hover:bg-accent-hover text-on-primary font-label-md text-label-md font-semibold rounded-xl shadow-md transition-all duration-200 transform active:scale-[0.98] flex items-center justify-center gap-space-xs shrink-0 cursor-pointer" onclick="handleGenerate()" type="button">
+<span>스토리 및 채널 콘텐츠 생성하기</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  function handleGenerate() {
+    const btn = event.currentTarget;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>사실 데이터 분석 및 에디토리얼 조판 중...</span>';
+    btn.classList.add('opacity-80', 'pointer-events-none');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>완료! 에디터로 이동합니다</span>';
+    }, 1500);
+  }
+
+  // Interactive Chip Selector Toggles
+  document.querySelectorAll('#category-chips .category-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('#category-chips .category-chip').forEach(c => {
+        c.className = 'category-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container';
+      });
+      this.className = 'category-chip active px-3.5 py-1.5 rounded-full font-label-md text-label-md font-medium transition-all duration-150 bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5';
+    });
+  });
+
+  document.querySelectorAll('#tone-chips .tone-chip').forEach(chip => {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('#tone-chips .tone-chip').forEach(c => {
+        c.className = 'tone-chip px-3 py-1.5 rounded-full font-label-md text-label-md transition-all duration-150 bg-surface-container-low text-ink-secondary hover:bg-surface-container';
+      });
+      this.className = 'tone-chip active px-3.5 py-1.5 rounded-full font-label-md text-label-md font-medium transition-all duration-150 bg-ink-primary text-surface-white shadow-sm flex items-center gap-1.5';
+    });
+  });
+
+  // Dynamic Character Counter
+  const memoInput = document.getElementById('story-memo');
+  const charCounter = document.getElementById('char-count');
+  if (memoInput && charCounter) {
+    memoInput.addEventListener('input', (e) => {
+      charCounter.textContent = e.target.value.length;
+    });
+  }
+</script></main></div></body></html>

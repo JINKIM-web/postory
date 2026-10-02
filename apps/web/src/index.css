@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* 계획서 2.3 디자인 시스템 확정안 */
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-canvas: #fafaf7;
+  --color-canvas-alt: #f7f7f3;
+  --color-surface: #ffffff;
+  --color-subtle: #f4f4f0;
+  --color-ink: #171717;
+  --color-ink-2: #262626;
+  --color-muted: #737373;
+  --color-line: #eaeae5;
+  --color-line-strong: #d1d1cb;
+
+  --color-accent: #f2664b;
+  --color-accent-hover: #e05338;
+  --color-accent-tint: #fff1ee;
+  --color-accent-text: #ac341e;
+
+  --color-confirmed: #15803d;
+  --color-confirmed-soft: #f0fdf4;
+  --color-visual: #1d4ed8;
+  --color-visual-soft: #eff6ff;
+  --color-meta: #475569;
+  --color-meta-soft: #f1f5f9;
+  --color-unknown: #b45309;
+  --color-unknown-soft: #fffbeb;
+  --color-alert: #dc2626;
+  --color-alert-soft: #fef2f2;
+
+  --radius-card: 12px;
+  --radius-btn: 10px;
+  --radius-marker: 8px;
+
+  --shadow-float: 0 4px 20px -2px rgba(23, 23, 23, 0.05), 0 2px 6px -1px rgba(23, 23, 23, 0.03);
+  --shadow-overlay: 0 12px 32px -4px rgba(23, 23, 23, 0.1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-canvas text-ink-2 font-sans antialiased;
+    letter-spacing: -0.01em;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply text-ink;
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* 블로그 편집기 본문 (Editor Body 16px / 1.75) */
+.editorial {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-ink-2);
+}
+.editorial:focus {
+  outline: none;
+}
+.editorial h2 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 2.25rem 0 0.75rem;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-accent);
+}
+.editorial h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 1.75rem 0 0.5rem;
+}
+.editorial p {
+  margin: 0 0 1rem;
+}
+.editorial ul,
+.editorial ol {
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+}
+.editorial ul {
+  list-style: disc;
+}
+.editorial ol {
+  list-style: decimal;
+}
+.editorial li p {
+  margin: 0.15rem 0;
+}
+.editorial blockquote {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--color-line-strong);
+  background: var(--color-canvas-alt);
+  border-radius: 0 8px 8px 0;
+}
+.editorial strong {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+.editorial > *:first-child {
+  margin-top: 0;
+}
+.editorial p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: var(--color-muted);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 102, 75, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(242, 102, 75, 0);
+  }
+}
+.pulse-soft {
+  animation: pulse-soft 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-soft {
+    animation: none;
+  }
+}

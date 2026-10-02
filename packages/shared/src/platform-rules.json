@@ -1,0 +1,19 @@
+{
+  "_note": "명세서 4.3. 플랫폼 정책은 수시로 바뀌므로 개발 착수 직전·S5 착수 전에 공식 문서로 재확인한다 (미결 #8).",
+  "blog": {
+    "title": { "recommendedMin": 15, "recommendedMax": 40 },
+    "body": { "recommendedMin": 1200, "recommendedMax": 3000 }
+  },
+  "facebook": {
+    "body": { "recommendedMin": 300, "recommendedMax": 900 }
+  },
+  "instagram": {
+    "caption": { "max": 2200, "recommendedMax": 600 },
+    "hashtags": { "max": 30, "recommendedMax": 5 }
+  },
+  "shorts": {
+    "title": { "max": 100, "recommendedMax": 40 },
+    "description": { "max": 5000, "recommendedMax": 300 },
+    "durationSec": { "min": 15, "max": 30 }
+  }
+}
