@@ -1,14 +1,16 @@
-import { ArrowRight, ChevronRight, ImagePlus, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronRight, DatabaseBackup, Download, ImagePlus, Sparkles } from "lucide-react";
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { CATEGORIES, PLATFORMS, type Category, type Platform, type Tone } from "@postory/shared";
 import { addFiles } from "../components/PhotoUploader";
 import { ProjectCard } from "../components/ProjectCard";
-import { Button, Card, Chip, cx, EmptyState, Spinner, useToast } from "../components/ui";
+import { Button, Card, Chip, cx, EmptyState, Notice, Spinner, useToast } from "../components/ui";
 import { useLive } from "../lib/hooks";
 import { createProject, listImages, listProjects } from "../lib/repo";
 import { getSettings } from "../lib/settings";
 import { usageSnapshot } from "../lib/usage";
+import { downloadFullBackup } from "../components/BackupControls";
+import { useSettings } from "../lib/settings";
 
 // 홈 대시보드 (벤치마크 9장 / Stitch postory_1)
 
@@ -118,6 +120,8 @@ function QuickCreate() {
 
 export function HomePage() {
   const navigate = useNavigate();
+  const toast = useToast();
+  const { lastBackupAt } = useSettings();
   const { data } = useLive(
     async () => {
       const projects = (await listProjects()).slice(0, 4);
@@ -152,6 +156,15 @@ export function HomePage() {
           새 콘텐츠 만들기
         </Button>
       </section>
+
+      {data && data.projects.length > 0 && (!lastBackupAt || Date.now() - new Date(lastBackupAt).getTime() > 7 * 86_400_000) && (
+        <Notice tone="warning" icon={<DatabaseBackup className="size-4" />} title={lastBackupAt ? "백업한 지 일주일이 지났어요" : "아직 백업하지 않았어요"}>
+          <p>프로젝트와 사진은 이 브라우저에만 저장됩니다. 브라우저 데이터를 지우면 함께 사라지니 가끔 백업 파일을 받아 두세요.</p>
+          <Button size="sm" className="mt-3" icon={<Download className="size-4" />} onClick={() => downloadFullBackup(toast)}>
+            지금 백업하기
+          </Button>
+        </Notice>
+      )}
 
       <QuickCreate />
 

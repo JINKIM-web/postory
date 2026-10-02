@@ -18,6 +18,8 @@ export interface Settings {
   lastPlatforms: string[] | null;
   rightPanelTab: "quality" | "evidence" | "versions";
   uploadNoticeDismissed: boolean;
+  // 마지막 전체 백업 시각 (백업 안내용)
+  lastBackupAt: string | null;
 }
 
 const DEFAULTS: Settings = {
@@ -31,6 +33,7 @@ const DEFAULTS: Settings = {
   lastPlatforms: null,
   rightPanelTab: "quality",
   uploadNoticeDismissed: false,
+  lastBackupAt: null,
 };
 
 const KEY = "postory.settings.v1";

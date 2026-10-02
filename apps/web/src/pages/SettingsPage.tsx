@@ -1,5 +1,6 @@
 import { Database, Gauge, HelpCircle, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { BackupControls } from "../components/BackupControls";
 import { Button, Card, Notice, useToast } from "../components/ui";
 import { api } from "../lib/api";
 import { getDb } from "../lib/db";
@@ -120,6 +121,9 @@ export function SettingsPage() {
           프로젝트·사진·버전·로그는 이 브라우저의 IndexedDB에, 설정은 localStorage에 저장됩니다. 다른 기기나 브라우저와 공유되지 않으며, 브라우저 데이터를 지우면 함께 삭제됩니다.
           {storage && ` (${storage})`}
         </p>
+        <div className="mt-4 border-t border-line pt-4">
+          <BackupControls />
+        </div>
         <Button
           variant="danger"
           size="sm"

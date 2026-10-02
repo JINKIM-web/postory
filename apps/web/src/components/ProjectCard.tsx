@@ -1,6 +1,8 @@
-import { ArrowRight, Copy, Trash2 } from "lucide-react";
+import { ArrowRight, Copy, FolderDown, Trash2 } from "lucide-react";
 import { Link, useNavigate } from "react-router";
 import { CATEGORIES, labelOf } from "@postory/shared";
+import { backupFileName, exportBackup } from "../lib/backup";
+import { downloadBlob } from "../lib/export";
 import { deleteProject, duplicateProject } from "../lib/repo";
 import type { ImageRecord, ProjectRecord } from "../lib/types";
 import { PhotoThumb } from "./PhotoThumb";
@@ -47,6 +49,18 @@ export function ProjectCard({ project, cover, actions }: { project: ProjectRecor
                 }}
               >
                 <Copy className="size-4" />
+              </button>
+              <button
+                className="grid size-9 place-items-center rounded-lg hover:bg-subtle"
+                aria-label="내보내기"
+                title="내보내기 (백업 파일)"
+                onClick={async () => {
+                  const { blob } = await exportBackup(project.id);
+                  downloadBlob(blob, backupFileName("project", project.title));
+                  toast("프로젝트를 백업 파일로 내보냈습니다. 설정 → 백업 불러오기로 되살릴 수 있어요.", "success");
+                }}
+              >
+                <FolderDown className="size-4" />
               </button>
               <button
                 className="grid size-9 place-items-center rounded-lg hover:bg-alert-soft hover:text-alert"
