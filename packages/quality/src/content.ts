@@ -145,3 +145,20 @@ export function coverCredit(cover: BlogCover | undefined): string {
   if (!cover?.enabled || cover.source !== "unsplash" || !cover.unsplash) return "";
   return `Photo by ${cover.unsplash.author} on Unsplash`;
 }
+
+// 의견 표지가 연달아 겹친 경우 하나로 줄인다 ("개인적으로 개인적으로" → "개인적으로")
+const OPINION_MARKER_DUP = /(개인적으로|제 기준에서는|제 기준으로는)([,\s]+\1)+/g;
+
+export function dedupeOpinionMarkers(content: ChannelContent): ChannelContent {
+  const fix = (s: string) => s.replace(OPINION_MARKER_DUP, "$1");
+  switch (content.platform) {
+    case "blog":
+      return { ...content, title: fix(content.title), html: fix(content.html) };
+    case "facebook":
+      return { ...content, body: fix(content.body) };
+    case "instagram":
+      return { ...content, caption: fix(content.caption) };
+    case "shorts":
+      return { ...content, hook: fix(content.hook), caption: fix(content.caption), description: fix(content.description), scenes: content.scenes.map((s) => ({ ...s, narration: fix(s.narration), overlayText: fix(s.overlayText) })) };
+  }
+}

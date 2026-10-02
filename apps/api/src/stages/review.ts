@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { channelText, insertDisclosure, replaceSentence, runRuleChecks, splitSentences, type Industry, type RuleIssue } from "@postory/quality";
+import { channelText, dedupeOpinionMarkers, insertDisclosure, replaceSentence, runRuleChecks, splitSentences, type Industry, type RuleIssue } from "@postory/quality";
 import { SPONSORSHIP_DISCLOSURE, type ChannelContent, type CheckType, type ReviewIssue, type ReviewRequest, type ReviewResponse, type Severity, type UsageInfo, type UserWord } from "@postory/shared";
 import { callJson } from "../llm.js";
 import { EVIDENCE_POLICY, storyBlock, STYLE_POLICY, toneTarget } from "../prompts.js";
@@ -179,6 +179,9 @@ ${STYLE_POLICY}
     }
     issues.push({ ...d, suggestion, status: "open" });
   });
+
+  // 재작성 과정에서 "개인적으로 개인적으로"처럼 의견 표지가 겹친 경우 정리 (골든셋 daily-1)
+  content = dedupeOpinionMarkers(content);
 
   // 안전장치: 수정 과정에서 표기 문구가 빠졌다면 다시 넣는다
   if (context.hasSponsorship) {

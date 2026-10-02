@@ -37,6 +37,13 @@ export const LEVEL1: DictionaryEntry[] = [
   { pattern: "면역력 (강화|증진)", regex: true, industry: "health_food", reason: "기능성 인정 범위를 넘을 수 있는 효능 표현입니다." },
   { pattern: "세포 재생", industry: "cosmetics", reason: "화장품을 의약품으로 오인하게 하는 표현입니다." },
   { pattern: "(여드름|아토피|피부염) (치료|완치)", regex: true, industry: "cosmetics", reason: "화장품을 의약품으로 오인하게 하는 표현입니다." },
+  // 의견("~라고 느꼈다") 형태여도 효능 단정은 광고 규제 대상 (골든셋 product-3)
+  {
+    pattern: "(기미|주근깨|잡티|여드름|흉터|색소침착|주름)(가|이|는|은)?\\s?(완전히|싹|깨끗이|말끔히)?\\s?(없어|사라|제거|지워|개선|완화)",
+    regex: true,
+    industry: "cosmetics",
+    reason: "화장품의 효능·효과를 단정하는 표현입니다. 개인 의견 형식이어도 쓸 수 없습니다.",
+  },
   { pattern: "부작용 (없는|없음|제로)", regex: true, industry: "medical", reason: "의료 효과·안전성을 보장하는 표현입니다." },
   { pattern: "통증이? 사라", regex: true, industry: "medical", reason: "치료 효과를 단정하는 표현입니다." },
   { pattern: "개발 호재", industry: "real_estate", reason: "부동산 개발 호재를 단정하는 표현입니다." },

@@ -103,3 +103,15 @@ describe("목록·중복 문장 수정", async () => {
     expect(next?.platform === "blog" && next.html).toBe("<ul><li><p>다른 항목</p></li></ul>");
   });
 });
+
+describe("골든셋 3차에서 찾은 문제", async () => {
+  const { dedupeOpinionMarkers } = await import("./content.js");
+  it("화장품 효능 단정은 의견 형식이어도 L1", () => {
+    const issues = runRuleChecks({ platform: "blog", text: "개인적으로, 이 세럼을 쓰며 기미가 완전히 없어졌다고 느꼈다.", industries: ["cosmetics"] });
+    expect(issues.some((i) => i.severity === "L1")).toBe(true);
+  });
+  it("겹친 의견 표지를 하나로 줄인다", () => {
+    const next = dedupeOpinionMarkers({ platform: "facebook", body: "개인적으로 개인적으로 다음 주에도 해볼 생각이다." });
+    expect(next.platform === "facebook" && next.body).toBe("개인적으로 다음 주에도 해볼 생각이다.");
+  });
+});
