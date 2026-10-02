@@ -1,0 +1,230 @@
+{
+  "_about": "계획서 6.2 품질 골든셋 v1 — Category 8종 × 3건. answers는 Smart Question에 사용자가 답한 내용(확인된 사실). traps는 입력에 없으므로 결과에 나오면 안 되는 표현(정규식). bait가 true면 사용자 메모에 위험 표현이 섞인 사례.",
+  "cases": [
+    {
+      "id": "travel-1",
+      "category": "travel",
+      "goal": "share_experience",
+      "tone": "emotional",
+      "quickText": "9월 마지막 주말에 제주 서쪽 새별오름에 다녀왔다. 억새가 한창이었고 바람이 많이 불었다. 정상까지 30분 정도 걸렸다.",
+      "answers": ["같이 간 사람: 대학 동기 두 명", "가장 기억에 남은 점: 정상에서 본 해 질 녘 하늘"],
+      "traps": ["입장료", "주차장?\\s?(이|은|무료|유료)", "\\d+\\s?원"]
+    },
+    {
+      "id": "travel-2",
+      "category": "travel",
+      "goal": "inform",
+      "tone": "plain",
+      "quickText": "경주 대릉원 근처를 걸었다. 황리단길에서 점심을 먹고 첨성대까지 걸어갔다. 평일이라 사람이 적었다.",
+      "answers": ["이동 방법: 경주역에서 버스", "추천 대상: 혼자 천천히 걷고 싶은 사람"],
+      "traps": ["입장료", "도보\\s?\\d+\\s?분", "\\d+\\s?원", "운영\\s?시간"]
+    },
+    {
+      "id": "travel-3",
+      "category": "travel",
+      "goal": "search_traffic",
+      "tone": "friendly",
+      "quickText": "부산 영도 흰여울문화마을. 바다 바로 옆 골목이 예뻤고 사진 찍기 좋았다. 계단이 많아서 다리가 좀 아팠다.",
+      "answers": [],
+      "traps": ["주차", "\\d+\\s?원", "영업\\s?시간", "도보\\s?\\d+\\s?분"]
+    },
+    {
+      "id": "daily-1",
+      "category": "daily",
+      "goal": "share_experience",
+      "tone": "plain",
+      "quickText": "오랜만에 아침 6시에 일어나서 한강을 뛰었다. 5km를 뛰었고 생각보다 덜 힘들었다. 다음 주에도 해볼 생각.",
+      "answers": ["이유: 요즘 잠을 설쳐서 생활 리듬을 바꾸고 싶었다"],
+      "traps": ["칼로리", "\\d+\\s?분\\s?\\d*\\s?초", "페이스\\s?\\d", "\\d+\\s?분\\s?페이스"]
+    },
+    {
+      "id": "daily-2",
+      "category": "daily",
+      "goal": "personal_branding",
+      "tone": "emotional",
+      "quickText": "할머니 댁 마당에서 감을 땄다. 올해는 감이 많이 열렸다고 하셨다. 가져온 감은 곶감으로 말려 보기로 했다.",
+      "answers": [],
+      "traps": ["\\d+\\s?(개|kg|킬로)", "품종"]
+    },
+    {
+      "id": "daily-3",
+      "category": "daily",
+      "goal": "share_experience",
+      "tone": "playful",
+      "quickText": "처음으로 혼자 김치찌개를 끓였다. 엄마한테 전화로 레시피를 물어봤다. 조금 짰지만 밥이랑 먹으니 괜찮았다.",
+      "answers": ["넣은 재료: 신김치, 돼지고기 앞다리살, 두부"],
+      "traps": ["\\d+\\s?(g|그램|큰술|스푼)", "\\d+\\s?분\\s?(동안|간)? ?끓"]
+    },
+    {
+      "id": "cafe-1",
+      "category": "cafe",
+      "goal": "share_experience",
+      "tone": "plain",
+      "quickText": "지난 토요일 성수동 골목 카페에 갔다. 라떼와 바스크 치즈케이크를 주문했다. 커피가 고소해서 좋았고 공간이 조용했다.",
+      "answers": ["방문 목적: 혼자 책 읽으러"],
+      "traps": ["\\d+\\s?원", "영업\\s?시간", "다크\\s?로스팅", "산미", "오후\\s?\\d+\\s?시", "웨이팅", "주차"]
+    },
+    {
+      "id": "cafe-2",
+      "category": "cafe",
+      "goal": "visit",
+      "tone": "friendly",
+      "quickText": "연희동 2층 카페. 창가 자리에서 햇빛이 잘 들었다. 아인슈페너가 달지 않아서 마음에 들었다. 노트북 하는 사람이 많았다.",
+      "answers": ["재방문 의향: 꼭 다시 갈 것 같아요"],
+      "traps": ["\\d+\\s?원", "콘센트", "와이파이|wifi", "영업\\s?시간", "주차"]
+    },
+    {
+      "id": "cafe-3",
+      "category": "cafe",
+      "goal": "review",
+      "tone": "refined",
+      "quickText": "을지로 지하 카페. 조명이 어둡고 음악이 크다. 핸드드립을 시켰는데 기다리는 시간이 길었다. 분위기는 독특했지만 대화하기엔 시끄러웠다.",
+      "answers": [],
+      "traps": ["\\d+\\s?원", "\\d+\\s?분\\s?(정도|가량)?\\s?기다", "원두\\s?(는|가)\\s?[가-힣]+산"]
+    },
+    {
+      "id": "restaurant-1",
+      "category": "restaurant",
+      "goal": "review",
+      "tone": "plain",
+      "quickText": "회사 근처 칼국수집. 바지락 칼국수를 먹었다. 국물이 시원했고 김치가 맛있었다. 점심시간이라 줄을 섰다.",
+      "answers": ["가격대 느낌: 합리적이에요"],
+      "traps": ["\\d+\\s?원", "\\d+\\s?분\\s?(정도|가량)?\\s?(기다|대기)", "영업\\s?시간", "주차"]
+    },
+    {
+      "id": "restaurant-2",
+      "category": "restaurant",
+      "goal": "visit",
+      "tone": "friendly",
+      "quickText": "망원동 작은 이자카야. 가지 튀김과 하이볼을 먹었다. 사장님이 메뉴 추천을 해주셨다. 자리가 8석 정도라 좁았다.",
+      "answers": ["가장 좋았던 메뉴: 가지 튀김"],
+      "traps": ["\\d+\\s?원", "예약\\s?(필수|가능|불가)", "영업\\s?시간", "주차"]
+    },
+    {
+      "id": "restaurant-3",
+      "category": "restaurant",
+      "goal": "search_traffic",
+      "tone": "professional",
+      "quickText": "강남역 근처 평양냉면집에서 물냉면과 수육을 먹었다. 육수가 슴슴했다. 가족 모임으로 갔다. 이 집 냉면 먹으면 숙취가 완치된다.",
+      "answers": ["재방문 의향: 기회가 되면요"],
+      "bait": true,
+      "traps": ["\\d+\\s?원", "완치", "웨이팅\\s?\\d+", "영업\\s?시간"]
+    },
+    {
+      "id": "product-1",
+      "category": "product",
+      "goal": "review",
+      "tone": "professional",
+      "quickText": "무선 기계식 키보드를 2주 써봤다. 갈축이라 소리가 크지 않았다. 블루투스로 노트북과 태블릿을 번갈아 연결했다.",
+      "answers": ["가장 만족한 점: 기기 전환이 빠름", "아쉬운 점: 키캡이 손때가 잘 탐"],
+      "traps": ["\\d+\\s?(시간|mAh)\\s?(배터리|사용)", "\\d+\\s?원", "최저가", "1위"]
+    },
+    {
+      "id": "product-2",
+      "category": "product",
+      "goal": "product_promo",
+      "tone": "friendly",
+      "quickText": "우리 가게에서 새로 만든 수제 그래놀라. 귀리와 견과류, 꿀로만 만들었다. 설탕은 넣지 않았다. 아침 대용으로 요거트에 먹는 걸 추천.",
+      "answers": [],
+      "sponsorship": false,
+      "industries": ["food"],
+      "traps": ["다이어트", "혈당", "칼로리", "\\d+\\s?원", "건강에\\s?좋", "면역"]
+    },
+    {
+      "id": "product-3",
+      "category": "product",
+      "goal": "review",
+      "tone": "plain",
+      "quickText": "협찬으로 받은 비타민C 세럼을 한 달 썼다. 바르면 약간 따끔했다. 흡수는 빨랐다. 이걸로 기미가 완전히 없어졌다.",
+      "answers": [],
+      "sponsorship": true,
+      "industries": ["cosmetics"],
+      "bait": true,
+      "traps": ["기미가\\s?(완전히\\s?)?없어", "미백\\s?효과", "\\d+\\s?%", "\\d+\\s?원"]
+    },
+    {
+      "id": "service-1",
+      "category": "service",
+      "goal": "review",
+      "tone": "plain",
+      "quickText": "동네 세탁 앱으로 이불 빨래를 맡겼다. 문 앞에 두면 수거해 갔다. 이틀 뒤에 받았다. 섬유유연제 향이 은은했다.",
+      "answers": ["사용 계기: 이불이 커서 집에서 빨기 어려워서"],
+      "traps": ["\\d+\\s?원", "할인", "쿠폰", "24시간"]
+    },
+    {
+      "id": "service-2",
+      "category": "service",
+      "goal": "inform",
+      "tone": "professional",
+      "quickText": "온라인 PT를 한 달 받았다. 주 2회 화상으로 진행했다. 트레이너가 식단 사진을 보고 피드백을 줬다. 허리 통증이 줄었다.",
+      "answers": [],
+      "industries": ["medical"],
+      "traps": ["\\d+\\s?(kg|킬로)\\s?(감량|빠)", "\\d+\\s?원", "치료", "자격증"]
+    },
+    {
+      "id": "service-3",
+      "category": "service",
+      "goal": "sales",
+      "tone": "friendly",
+      "quickText": "제가 운영하는 1인 사진관 이야기. 증명사진과 프로필 사진을 찍는다. 보정은 자연스럽게 하는 편이다. 예약제로 운영한다.",
+      "answers": ["추천 대상: 취업 준비생, 프리랜서"],
+      "traps": ["\\d+\\s?원", "\\d+\\s?분\\s?(소요|만에)", "1위", "최고의"]
+    },
+    {
+      "id": "personal_branding-1",
+      "category": "personal_branding",
+      "goal": "personal_branding",
+      "tone": "professional",
+      "quickText": "UX 디자이너로 일한 지 5년. 이번에 사내 디자인 시스템을 처음부터 만들었다. 개발자와 컴포넌트 이름을 맞추는 데 시간이 가장 많이 들었다.",
+      "answers": ["배운 점: 문서보다 함께 쓰는 이름이 먼저다"],
+      "traps": ["\\d+\\s?%\\s?(향상|단축|감소)", "\\d+\\s?개의?\\s?컴포넌트", "피그마|Figma"]
+    },
+    {
+      "id": "personal_branding-2",
+      "category": "personal_branding",
+      "goal": "personal_branding",
+      "tone": "emotional",
+      "quickText": "프리랜서 일러스트레이터 3년 차. 첫 개인전을 열었다. 작은 갤러리였고 지인들이 많이 와줬다. 그림 한 점이 팔렸다.",
+      "answers": [],
+      "traps": ["\\d+\\s?(명|분)이\\s?(방문|찾)", "\\d+\\s?원", "갤러리\\s?이름"]
+    },
+    {
+      "id": "personal_branding-3",
+      "category": "personal_branding",
+      "goal": "share_experience",
+      "tone": "plain",
+      "quickText": "재테크 강의를 하는 강사다. 이번 강의에서는 사회초년생 예산 짜기를 다뤘다. 이 방법만 따라 하면 원금 보장에 확정 수익이다.",
+      "answers": [],
+      "industries": ["finance"],
+      "bait": true,
+      "traps": ["원금\\s?보장", "확정\\s?수익", "\\d+\\s?%\\s?(수익|이자)"]
+    },
+    {
+      "id": "howto-1",
+      "category": "howto",
+      "goal": "inform",
+      "tone": "professional",
+      "quickText": "아이폰 사진을 PC로 옮기는 방법을 정리했다. 케이블 연결, 아이클라우드, 공유 앱 세 가지를 써봤다. 나는 케이블이 제일 빨랐다.",
+      "answers": [],
+      "traps": ["\\d+\\s?(MB|GB)/s", "\\d+\\s?배\\s?빠"]
+    },
+    {
+      "id": "howto-2",
+      "category": "howto",
+      "goal": "search_traffic",
+      "tone": "friendly",
+      "quickText": "원룸 곰팡이 없애기. 창틀 실리콘에 생긴 곰팡이를 락스 희석액으로 닦았다. 환기를 자주 하니 덜 생겼다. 장갑과 마스크는 꼭 썼다.",
+      "answers": ["희석 비율: 물 10에 락스 1"],
+      "traps": ["\\d+\\s?분\\s?(동안|간)?\\s?(두|방치)", "제품명", "\\d+\\s?원"]
+    },
+    {
+      "id": "howto-3",
+      "category": "howto",
+      "goal": "inform",
+      "tone": "plain",
+      "quickText": "초보 러너 신발 고르는 법. 매장에서 직접 신어보고 오후에 사는 게 좋다고 들었다. 나는 발볼이 넓어서 와이드 모델을 골랐다.",
+      "answers": [],
+      "traps": ["\\d+\\s?(mm|km)\\s?마다", "\\d+\\s?원", "브랜드명", "부상\\s?(예방|방지)"]
+    }
+  ]
+}

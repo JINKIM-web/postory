@@ -90,3 +90,16 @@ describe("사용자 금칙어 (L4)", () => {
     expect(summarizeGroups([{ checkType: "forbidden", severity: "L4", status: "open" }]).find((g) => g.key === "forbidden")?.status).toBe("improve");
   });
 });
+
+describe("목록·중복 문장 수정", async () => {
+  const { replaceSentence } = await import("./content.js");
+  const { splitSentences, htmlToText } = await import("./text.js");
+  it("목록 항목 문장에는 글머리가 붙지 않는다", () => {
+    expect(splitSentences(htmlToText("<ul><li><p>원금 보장 상품</p></li></ul>"))).toEqual(["원금 보장 상품"]);
+  });
+  it("본문과 목록에 같은 문장이 있으면 모두 바꾼다", () => {
+    const html = "<p>원금 보장이다.</p><ul><li><p>원금 보장이다.</p></li><li><p>다른 항목</p></li></ul>";
+    const next = replaceSentence({ platform: "blog", title: "t", titleCandidates: [], html }, "원금 보장이다.", "");
+    expect(next?.platform === "blog" && next.html).toBe("<ul><li><p>다른 항목</p></li></ul>");
+  });
+});

@@ -10,7 +10,8 @@
     "dev:api": "npm run dev -w @postory/api",
     "build": "npm run build -w @postory/shared && npm run build -w @postory/ui && npm run build -w @postory/api && npm run build -w @postory/web",
     "test": "npm run test --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present"
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "eval": "tsx eval/run.mts"
   },
   "engines": {
     "node": ">=20"

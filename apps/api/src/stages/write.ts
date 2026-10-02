@@ -102,20 +102,31 @@ function mockBlog(story: MasterStory, photos: PhotoRef[]): z.infer<typeof BlogDr
 
 // ---------- Blog ----------
 
+// 근거 개수에 맞춘 목표 분량 (공백 제외). 고정된 1,200자 목표는 근거가 적을 때 지어내기를 부추겼다 (골든셋 평가 결과)
+function evidenceCount(story: MasterStory): number {
+  return story.confirmedFacts.length + story.userOpinions.length + story.visualFacts.length + story.metadataFacts.filter((m) => m.userVerified).length;
+}
+
+export function targetLength(story: MasterStory, photos: number, per = 120, base = 150, max = platformRules.blog.body.recommendedMax): number {
+  return Math.min(max, Math.max(250, base + evidenceCount(story) * per + photos * 60));
+}
+
 async function writeBlog(req: WriteRequest): Promise<WriteResponse> {
   const { context, masterStory: story, photos } = req;
   const rules = platformRules.blog;
+  const target = targetLength(story, photos.length);
+  const sections = Math.min(5, Math.max(1, Math.ceil(evidenceCount(story) / 2)));
   const { data, usage } = await callJson({
     operation: "blog",
     tier: "main",
     schemaName: "blog_draft",
     schema: BlogDraft,
     system: system(`너는 네이버 블로그에 바로 올릴 수 있는 수준의 글을 쓰는 에디터다.
-[구성] 도입(소제목 없음) → 방문/사용 배경 → 소제목 3~5개(각 소제목 아래 사진 1장 + 본문 2~4문단) → 핵심 정리(리스트) → 추천 대상 또는 사용자 의견 → 마무리(소제목 없음).
+[구성] 도입(소제목 없음) → 소제목 최대 ${sections}개(근거가 있는 주제만, 사진이 있으면 각 소제목에 맞는 사진 1장) → 핵심 정리(리스트, 근거에 있는 내용만) → 마무리(소제목 없음, CTA).
 - 제목 후보 3~5개 (${rules.title.recommendedMin}~${rules.title.recommendedMax}자, 검색하는 사람이 찾을 핵심 키워드를 자연스럽게 포함, 과장 없음).
-- 본문 분량은 공백 제외 ${rules.body.recommendedMin}~${rules.body.recommendedMax}자를 목표로 하되, 근거가 적으면 억지로 늘리지 않는다. 근거를 반복하거나 꾸며서 분량을 채우지 않는다.
+- 본문 분량: 공백 제외 약 ${target}자 이내. 근거 하나당 1~3문장이면 충분하다. 이 분량을 넘기려고 묘사·이유·교훈을 덧붙이지 않는다.
 - 사진은 kind "photo" 블록으로 넣고 photoNumber에 사진 번호를 쓴다. 모든 사진을 한 번씩, 내용과 맞는 위치에 배치한다.
-- 문단은 2~4문장. 핵심 문장 1~2개만 **굵게** 표시한다.
+- 문단은 1~3문장. 핵심 문장 1~2개만 **굵게** 표시한다.
 - 광고·협찬 표기는 시스템이 자동으로 넣으므로 쓰지 않는다.`),
     user: `${contextBlock(context)}\n\n${storyBlock(story)}\n\n${photosBlock(photos)}`,
     mock: () => mockBlog(story, photos),
@@ -145,7 +156,7 @@ async function writeFacebook(req: WriteRequest): Promise<WriteResponse> {
     schema: FacebookDraft,
     system: system(`너는 Facebook 스토리형 포스트를 쓰는 에디터다.
 [구조] Hook(첫 줄, 스크롤을 멈추게 하는 한 문장) → Story(경험 2~4문장) → Key Message(한 문장) → CTA(한 문장).
-- 전체 공백 제외 ${rules.body.recommendedMin}~${rules.body.recommendedMax}자. 친근하고 자연스럽게. 해시태그는 쓰지 않는다.`),
+- 전체 공백 제외 약 ${targetLength(story, 0, 60, 100, rules.body.recommendedMax)}자 이내 (근거가 적으면 더 짧게). 친근하고 자연스럽게. 해시태그는 쓰지 않는다.`),
     user: `${contextBlock(context)}\n\n${storyBlock(story)}`,
     mock: () => ({
       hook: story.keyMessage,

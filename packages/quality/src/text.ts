@@ -41,7 +41,8 @@ export function htmlToText(html: string): string {
 export function splitSentences(text: string): string[] {
   return text
     .split(/(?<=[.!?。])\s+|\n+/)
-    .map((s) => s.trim())
+    // 목록 글머리(• - ·)는 본문에 없는 문자이므로 떼어 낸다 (문장 교체가 실패하지 않도록)
+    .map((s) => s.trim().replace(/^[•·-]\s*/, ""))
     .filter((s) => s.length > 0);
 }
 

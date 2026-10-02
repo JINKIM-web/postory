@@ -36,7 +36,8 @@ export function channelText(content: ChannelContent): ChannelText {
 function replaceInHtml(html: string, from: string, to: string): string | null {
   const needle = escapeHtml(from);
   if (!html.includes(needle)) return null;
-  const replaced = html.replace(needle, escapeHtml(to));
+  // 같은 문장이 여러 곳(본문·핵심 정리)에 있으면 모두 바꾼다
+  const replaced = html.split(needle).join(escapeHtml(to));
   // 문장을 지워서 빈 블록이 남으면 정리
   return replaced
     .replace(/<(strong|em)>\s*<\/\1>/g, "")
@@ -47,7 +48,7 @@ function replaceInHtml(html: string, from: string, to: string): string | null {
 
 function replaceInText(text: string, from: string, to: string): string | null {
   if (!text.includes(from)) return null;
-  return text.replace(from, to).replace(/ {2,}/g, " ").replace(/\n{3,}/g, "\n\n");
+  return text.split(from).join(to).replace(/ {2,}/g, " ").replace(/\n{3,}/g, "\n\n");
 }
 
 // 문장 단위 교체. 원문을 찾지 못하면 null (적용 불가)

@@ -25,7 +25,13 @@ export const config = {
     light: { input: Number(process.env.PRICE_LIGHT_INPUT ?? 0.25), output: Number(process.env.PRICE_LIGHT_OUTPUT ?? 2) },
     main: { input: Number(process.env.PRICE_MAIN_INPUT ?? 1.25), output: Number(process.env.PRICE_MAIN_OUTPUT ?? 10) },
   },
-  requestTimeoutMs: Number(process.env.OPENAI_TIMEOUT_MS ?? 90_000),
+  // gpt-5 계열은 긴 본문에서 90초를 넘기기도 한다 (골든셋 평가 결과)
+  requestTimeoutMs: Number(process.env.OPENAI_TIMEOUT_MS ?? 180_000),
+  // 추론 모델(gpt-5·o 시리즈)의 추론 강도 — 낮출수록 빠르고 저렴하다
+  reasoningEffort: {
+    light: process.env.OPENAI_REASONING_LIGHT ?? "minimal",
+    main: process.env.OPENAI_REASONING_MAIN ?? "low",
+  },
   pixabayKey: process.env.PIXABAY_API_KEY ?? "",
   unsplashKey: process.env.UNSPLASH_ACCESS_KEY ?? "",
   // Unsplash 출처 링크의 utm_source (가이드라인상 앱 이름)

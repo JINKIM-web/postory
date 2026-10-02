@@ -7,3 +7,6 @@ dist/
 .DS_Store
 coverage/
 supabase/.temp/
+
+# 평가 결과 (AI 출력 원문 포함)
+eval/results/

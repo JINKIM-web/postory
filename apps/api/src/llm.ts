@@ -61,6 +61,8 @@ export async function callJson<T>(call: JsonCall<T>): Promise<JsonResult<T>> {
     try {
       const completion = await getClient().chat.completions.create({
         model,
+        // 추론 모델에만 추론 강도를 지정한다 (다른 모델은 이 옵션을 거부함)
+        ...(/^(gpt-5|o\d)/.test(model) ? { reasoning_effort: config.reasoningEffort[call.tier] as OpenAI.ReasoningEffort } : {}),
         messages: [
           { role: "system", content: call.system },
           { role: "user", content },

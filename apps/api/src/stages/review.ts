@@ -135,7 +135,15 @@ ${STYLE_POLICY}
   // ④ 재검증 후 적용
   let content: ChannelContent = req.content;
   const issues: ReviewIssue[] = [];
-  drafts.forEach((d, id) => {
+  // 한 문장에 이슈가 여러 개일 수 있다. 자동 수정을 먼저 적용하고,
+  // 이미 고친 문장에 걸린 나머지 이슈는 같은 수정으로 해결된 것으로 본다.
+  const fixedSentences = new Map<string, string>();
+  const order = drafts.map((d, id) => ({ d, id })).sort((a, b) => Number(autoFix(b.d)) - Number(autoFix(a.d)));
+  order.forEach(({ d, id }) => {
+    if (d.originalText && fixedSentences.has(d.originalText)) {
+      issues.push({ ...d, suggestion: fixedSentences.get(d.originalText)!, status: "auto_fixed" });
+      return;
+    }
     if (d.checkType === "disclosure") {
       content = insertDisclosure(content);
       issues.push({ ...d, status: "auto_fixed" });
@@ -146,6 +154,16 @@ ${STYLE_POLICY}
     if (proposed !== undefined && proposed !== d.originalText) {
       suggestion = verifyRewrite(d.originalText, proposed, evidenceText, industries, userWords) ? proposed : null;
       if (suggestion === null && autoFix(d)) {
+        // L1은 남겨 두면 안 되므로 문장을 지운다. 근거 문제는 원문을 두고 사용자에게 확인을 맡긴다
+        if (d.severity === "L1" && d.checkType !== "evidence") {
+          const deleted = replaceSentence(content, d.originalText, "");
+          if (deleted) {
+            content = deleted;
+            fixedSentences.set(d.originalText, "");
+            issues.push({ ...d, suggestion: "", status: "auto_fixed", reason: `${d.reason} (안전한 수정문을 만들지 못해 문장을 삭제했습니다.)` });
+            return;
+          }
+        }
         issues.push({ ...d, suggestion: null, status: "reverted", reason: `${d.reason} (자동 수정 결과가 검증을 통과하지 못해 원문을 유지했습니다. 직접 확인해 주세요.)` });
         return;
       }
@@ -154,6 +172,7 @@ ${STYLE_POLICY}
       const next = replaceSentence(content, d.originalText, suggestion);
       if (next) {
         content = next;
+        fixedSentences.set(d.originalText, suggestion);
         issues.push({ ...d, suggestion, status: "auto_fixed" });
         return;
       }

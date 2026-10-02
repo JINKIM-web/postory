@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { ComposeStoryRequest, ComposeStoryResponse, MasterStory } from "@postory/shared";
+import { runRuleChecks, type Industry } from "@postory/quality";
 import { callJson } from "../llm.js";
 import { contextBlock, EVIDENCE_POLICY } from "../prompts.js";
 
@@ -18,8 +19,11 @@ const StoryFrame = z.object({
 
 export async function composeStory(req: ComposeStoryRequest): Promise<ComposeStoryResponse> {
   const { context, evidence, photos } = req;
-  const facts = evidence.filter((e) => e.type === "confirmed" && !e.isOpinion);
-  const opinions = evidence.filter((e) => e.type === "confirmed" && e.isOpinion);
+  // 사용자가 쓴 근거라도 L1(질병 치료·수익 보장 등) 표현은 글에 쓰지 않는다 (명세서 11.2, 41.2)
+  const safe = (e: (typeof evidence)[number]) =>
+    !runRuleChecks({ platform: "facebook", text: e.content, industries: context.industries as Industry[] }).some((i) => i.severity === "L1");
+  const facts = evidence.filter((e) => e.type === "confirmed" && !e.isOpinion && safe(e));
+  const opinions = evidence.filter((e) => e.type === "confirmed" && e.isOpinion && safe(e));
   const visuals = evidence.filter((e) => e.type === "visual");
   const metadata = evidence.filter((e) => e.type === "metadata");
   const unknowns = evidence.filter((e) => e.type === "unknown");
